@@ -1,6 +1,6 @@
-#KAWAZE
+# KAWAZE
 
-##Présentation
+## Présentation
 Nous vous présentons un projet UTILISSIME ! Un super beau site tout chaleureux qui mettra en relation les malades atteints de maladies graves (type cancer etc...), et leur permettra d'échanger à nimporte quelle heure du jour ou de la nuit, et même de se rencontrer dans leurs villes.
 
 Les besoins, et ce qui existe déjà :
@@ -12,10 +12,10 @@ Le site que nous proposons permettrait peut-être, soyons optimistes, de soulage
 
 Il existe déjà un site de ce type, mais il ne concerne que les maladies rares et met en contact les rares patients atteints dans le monde entier.
 
-###Concrètement, quel format ?
+### Concrètement, quel format ?
 Le site proposerait différents forums de discussion en fonction des maladies, mais aussi la possibilité pour les utilisateurs de dialoguer par message privé, et enfin une option de recherche géographique qui permettrait aux malades de se rencontrer dans leurs villes.
 
-##Coté technique
+## Coté technique
 
 Il y aura donc :
 
