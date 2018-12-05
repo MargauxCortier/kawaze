@@ -87,6 +87,13 @@ ul.socialicons li a:hover {
     border-bottom: 1px solid #c9cccd;
 }
 
+.img_logo {
+    width: 100%;
+    height: auto;
+    margin-top: 8%;
+    vertical-align: middle;
+
+    }
 
 .content {
     background-color: #ecf0f1;
