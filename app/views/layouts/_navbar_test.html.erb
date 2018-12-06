@@ -3,19 +3,25 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo ">
-                <a href="/"><div class="img_logo"><%= image_tag('river1.jpg') %></a></div></div> 
-                <div class="col-lg-3 col-xs-9 col-sm-5 col-md-3 selecttopic">
-                    <div class="dropdown">
-                        <a data-toggle="dropdown" href="#" >Borderlands 2</a> <b class="caret"></b>
-                        <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Borderlands 1</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Borderlands 2</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Borderlands 3</a></li>
-                        </ul>
+                <a href="/">
+                    <div class="img_logo">
+                        <%= image_tag('river1.jpg') %>
                     </div>
+                </a>
+            </div> 
+            <div class="col-lg-3 col-xs-5 col-sm-5 col-md-3 selecttopic">
+                <div class="dropdown">
+                    <a data-toggle="dropdown" href="#" >Borderlands 2</a> 
+                    <b class="caret"></b>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">  Borderlands 1</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Borderlands 2</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Borderlands 3</a></li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
+            <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
                     <div class="wrap">
                         <form action="#" method="post" class="form">
                             <div class="pull-left txt"><input type="text" class="form-control" placeholder="Search Topics"></div>
@@ -23,33 +29,64 @@
                             <div class="clearfix"></div>
                         </form>
                     </div>
-                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
+                    <% if user_signed_in? %>
+                    
+                            <div class="avatar pull-left dropdown">
+                                <a data-toggle="dropdown" href="#">
+                                      <%= image_tag('avatar.jpg') %>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <% if user_signed_in? %>
+                                </a> 
+                                <b class="caret"></b>
+                                <div class="status green">&nbsp;</div>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Log Out</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-4" href="04_new_account.html">Create account</a></li>
+                                </ul>
+                              </div>
+                            
+                            <div class="clearfix"></div>
+                        </div>
+                        <% end %>
+
+            <div class="navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <% if user_signed_in? %>
                         <%= image_tag('avatar.jpg') %>
 
+                        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
 
-                <li class="dropdown show">
-                      <a href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
-                    <ul class="dropdown-menu pulse animated show">
-                      <li><a href="/">My Profile</a></li>
-                      <li><a href="/">Home</a></li>
-                      <li><a href="/users/edit">Edit my Profile</a></li>
-                      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-                    </ul>  
-                  </li>
+                        <li class="dropdown show">
+                          <a href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
+                          <ul class="dropdown-menu pulse animated show">
+                              <li><a href="/">My Profile</a></li>
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/users/edit">Edit my Profile</a></li>
+                              <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                          </ul>  
+                      </li>
 
-                        <% else %>
-                        <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li><br />
-                        <li class="nav-item"><%= link_to "Sign UP", new_user_registration_path %>
-                        </li>
-                        <% end %>
-                    </ul>
-                        </div>
-                <!-- <div class="clearfix"></div> -->
-            </div>
-        </div>
-    </div>
+                      <% else %>
+                      <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li><br />
+                      <li class="nav-item"><%= link_to "Sign UP", new_user_registration_path %>
+                      </li>
+                      <% end %>
+                  </ul>
+              </div>
+              <!-- <div class="clearfix"></div> -->
+          </div>
+      </div>
+  </div>
 </div>
