@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 	end
 
 	def new_account_04
+		@user = current_user
 	end
 
 	def new_topic_03

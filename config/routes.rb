@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/topic/new', to: 'home#new_topic_03'
   get '/topic', to: 'home#topic_02'
+  get '/new_account', to: 'home#new_account_04'
 end
