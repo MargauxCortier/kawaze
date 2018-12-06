@@ -44,6 +44,7 @@ body {
 a {
     color: #363838;    
 }
+
 a:hover {
     color: #989c9e;    
 }
@@ -230,8 +231,6 @@ ul.socialicons li a:hover {
 .avatar .yellow {
     background-color: #ecd346;
 }
-
-
 
 /*-----------------------------------------------------------------*/
 /*--- Content ---*/

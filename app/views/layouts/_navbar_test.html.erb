@@ -1,3 +1,4 @@
+
 <div class="headernav">
     <div class="container">
         <div class="row">
@@ -24,26 +25,29 @@
                     </div>
                 </div>
 
-                <div>
-                    <% if user_signed_in? %>
-                    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-                    <%= current_user.name %>
-                    <% else %>
-                    <%= link_to "Sign In", new_user_session_path %>
-                    <%= link_to "Sign UP", new_user_registration_path %>
-                    <% end %>
-                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <% if user_signed_in? %>
+                        <%= image_tag('avatar.jpg') %>
 
-                <div class="avatar pull-left dropdown">
-                    <a data-toggle="dropdown" href="#"><%= image_tag('avatar.jpg') %><!-- <img src="images/avatar.jpg" alt="" /> --></a> <b class="caret"></b>
-                    <div class="status green">&nbsp;</div>
-                    <ul class="dropdown-menu" role="menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Log Out</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-4" href="04_new_account.html">Create account</a></li>
+
+                <li class="dropdown show">
+                      <a href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
+                    <ul class="dropdown-menu pulse animated show">
+                      <li><a href="/">My Profile</a></li>
+                      <li><a href="/">Home</a></li>
+                      <li><a href="/users/edit">Edit my Profile</a></li>
+                      <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                    </ul>  
+                  </li>
+
+                        <% else %>
+                        <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li><br />
+                        <li class="nav-item"><%= link_to "Sign UP", new_user_registration_path %>
+                        </li>
+                        <% end %>
                     </ul>
-                </div>
+                        </div>
                 <!-- <div class="clearfix"></div> -->
             </div>
         </div>
