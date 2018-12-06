@@ -540,6 +540,21 @@ td.chbox {
 
 
 
+/*-----------------------------------------------------------------*/
+/* edit.html.erb - edit */
+
+.nav-tabs { border-bottom: 2px solid #DDD; }
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+    .nav-tabs > li > a { border: none; color: #666; }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; }
+.tab-content{padding:20px}
+
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+body{ background: #EDECEC; padding:50px}
 
 
 
@@ -736,6 +751,101 @@ a.down:hover {
 /*-----------------------------------------------------------------*/
 /*--- #03_new_topic.html - NEW TOPIC ---*/
 
+content {
+
+    background-color: #ecf0f1;
+}
+
+/*--- button ---*/
+.centered {
+  margin:50px auto;
+  text-align:center;
+}
+
+.button.large{
+  padding: 12px 30px;
+  text-transform: uppercase;
+}
+
+.button.large:active{
+  top: 2px;
+}
+
+.button:hover{
+  background-color: #eee;
+  color: #555;
+}
+
+.button:active{
+  background: #e9e9e9;
+  position: relative;
+  top: 1px;
+  text-shadow: none;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+}
+
+/*--- button ---*/
+
+.first_row{
+    display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  margin:4%;
+  
+
+
+}
+/*--- profile card ---*/
+
+
+
+.portfolio{
+    width: 730px;
+    text-align:center;
+
+}
+
+.heading{
+    background: #fff;
+    padding: 1%;
+    text-align: left;
+    box-shadow: 0px 0px 4px 0px #545b62;
+}
+.heading img{
+    width: 10%;
+}
+.bio-info{
+    padding: 5%;
+    background:#fff;
+    box-shadow: 0px 0px 4px 0px #b0b3b7;
+}
+.name{
+    font-family: 'Charmonman', cursive;
+    font-weight:600;
+}
+.bio-image{
+    text-align:center;
+}
+.bio-image img{
+    width: 273px;
+    height: 273px;
+    border-radius:50%;
+}
+.bio-content{
+    text-align:left;
+
+}
+.bio-content p{
+    font-weight:600;
+    font-size:30px;
+}
+
+
+
+/*--- profile card end ---*/
+
 .newtopic input[type=text],
 .newtopic input[type=password]
 {
@@ -807,425 +917,425 @@ a.down:hover {
         margin-top: 8px;
         border-color: #bdc3c7;*/
 
-}
-
-.checkbox input {
-    margin-right: 7px;
-}
-
-.checkbox .fa-facebook-square {
-    color: #3b5b99;
-    font-size: 20px;
-    margin-top: 4px;
-}
-
-.checkbox .fa-google-plus-square {
-    color: #e74724;
-    font-size: 20px;
-    margin-top: 4px;
-}
-
-.checkbox .fa-twitter {
-    color: #42c8f4;
-    font-size: 20px;
-    margin-top: 4px;
-}
-
-.loading {
-    text-align: right;
-}
-
-.similarposts {
-    /*    height: 57px;*/
-    margin-bottom: 20px;
-
-}
-
-.similarposts p {
-    display: inline;
-    color: #bdc3c7;
-}
-.similarposts p span {
-    color: #363838;
-}
-
-.similarposts .fa-info-circle {
-    font-size: 18px;
-    color: #3498db;
-    margin-right: 10px;
-}
-
-.similarposts .fa-spinner {
-    font-size: 18px;
-    color: #363838;
-}
-
-.postinfotop h2 {
-    color: #363838;
-    font-size: 14px;
-    font-family: 'Open Sans Bold', sans-serif; 
-    padding: 20px;
-    margin: 0;
-    border-bottom: solid 1px #f1f1f1;
-}
-
-
-
-/*-----------------------------------------------------------------*/
-/*--- #04_new_account.html - NEW ACCOUNT ---*/
-
-.acccap h3 {
-    padding: 7px;
-    margin: 0;
-    border-radius: 2px;
-    background-color: #697683;
-    display: inline-block;
-    color: #ffffff;
-    font-size: 12px;
-    font-family: 'Open Sans Regular', sans-serif;
-
-
-}
-
-.acccap .posttext {
-    padding-bottom: 0;
-}
-
-.acccap .userinfo {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.accsection.privacy h3 {
-    background-color: #9b59b6;
-}
-
-.accsection.privacy .posttext {
-    padding: 0;
-    padding-top: 20px;
-}
-
-.accsection.privacy p {
-    margin-bottom: 0;
-}
-
-.accsection.privacy .checkbox {
-    margin: 20px 0 10px 0;
-}
-
-.accsection.survey h3 {
-    background-color: #e67e22;
-}
-
-.accsection.networks h3 {
-    background-color: #80d3ab;
-
-}
-
-.accsection .htext {
-    width: 40%;
-    float: left; 
-}
-
-.accsection .hnotice {
-    width: 60%;
-    float: left;
-    text-align: right;
-}
-
-.networks .btn {
-    display: block;
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 20px;
-    color: #ffffff;
-    font-size: 14px;
-    font-family: 'Open Sans Light', sans-serif;
-    text-align: left;
-}
-
-.networks .btn-fb {
-    background-color: #3b5b99;
-}
-
-.networks .btn-tw {
-    background-color: #42c8f4;
-}
-
-.networks .btn-gp {
-    background-color: #cd3d1e;
-}
-
-.networks .btn-pin {
-    background-color: #bd1425;
-}
-
-.newaccountpage .postinfobot {
-
-    padding: 0 30px 0 115px;
-
-}
-
-
-.accsection .imgsize {
-    color:#989c9e;
-    font-size: 12px;
-    font-family: 'Open Sans Regular', sans-serif;
-    margin: 10px 0;
-}
-
-.accsection input[type=password] {
-    margin-bottom: 0;
-}
-
-
-/*-----------------------------------------------------------------*/
-/*--- Extra small devices (less 767px) ---*/
-
-@media (max-width: 767px) {
-    
-    /*--- index.html ---*/
-    .container-fluid {
-        padding: 0;
     }
 
-    .post .userinfo {
-        width: 30%;
-        padding: 15px 0 15px 15px;
+    .checkbox input {
+        margin-right: 7px;
     }
 
-    .post .posttext {
-        width: 70%;
-        padding-right: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+    .checkbox .fa-facebook-square {
+        color: #3b5b99;
+        font-size: 20px;
+        margin-top: 4px;
     }
 
-    .post .comments .commentbg {
-        font-size: 12px;
-        padding: 7px;
-        min-width: 35px;
-    }
-    .post .time i {
-        display: block;
-        margin-top: 5px;
+    .checkbox .fa-google-plus-square {
+        color: #e74724;
+        font-size: 20px;
+        margin-top: 4px;
     }
 
-    .post .views i {
-        display: block;
-        margin-top: 5px;
+    .checkbox .fa-twitter {
+        color: #42c8f4;
+        font-size: 20px;
+        margin-top: 4px;
     }
 
-    .post .comments .commentbg .mark {
-        left: 36%;
+    .loading {
+        text-align: right;
     }
 
-    .post .time,
-    .post .views,
-    .post .views {
-    }
-
-
-    .headernav {
-        height: auto;
-    }
-
-    .avt {
-        height: auto; 
-        margin-bottom: 15px;
-    }
-
-    .selecttopic select {
-        width: 100%;
-    }
-
-    .avatar .dropdown-menu {
-        left: auto;
-        right: 0;
-    }
-
-    .selecttopic .dropdown-menu {
-        margin-top: -20px;
-    }
-
-    .dropdown.avatar .status {
-        right: 14px;
-    }
-
-    .dropdown.avatar b.caret {
-        color: #363838;
-    }
-
-    .sociconcent {
-        text-align: center;
-    }
-
-    /*--- 02_topic.html ---*/
-
-    .postinfobot {
-        padding: 10px;
-    }
-
-    .postinfobot .likeblock {
-        width: 100%;
-    }
-
-    .postinfobot .posted {
-        width: 200px;
-        margin: 0;
-    }
-
-    .postinfobot .next {
-        width: 76px;
-        margin: 0;
-    }
-
-    .textwraper textarea {
-        width: 175px;
-    }
-
-    footer ul.socialicons {
-        margin: 0;
-        padding: 0;
-    }
-    /* end 2*/
-
-    /*--- 03_new_topic.html ---*/
-    #pass {
+    .similarposts {
+        /*    height: 57px;*/
         margin-bottom: 20px;
-    }
-
-    .accsection .htext, 
-    .accsection .hnotice {
-        width: 100%;
-    }
-
-    .accsection .hnotice {
-        font-size: 10px;
-    }
-
-    .postinfobot .lblfch {
-        width: 80%;
-    }
-    .postinfobot .lblfch label {
-        line-height: normal;
-        padding-top: 15px;
-        padding-bottom: 15px;
 
     }
-    /* end 3 */
-}
 
-
-/*-----------------------------------------------------------------*/
-/*--- Small devices (768 - 991px) ---*/
-
-@media (min-width: 768px) and (max-width: 991px) {
-
-    .container-fluid {
-        padding: 0;
+    .similarposts p {
+        display: inline;
+        color: #bdc3c7;
     }
-
-    .post .userinfo {
-        width: 15%;
-        padding: 15px 0 15px 15px;
-    }
-
-    .post .posttext {
-        width: 85%;
-        padding-right: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .post .comments .commentbg {
-        font-size: 12px;
-        padding: 7px;
-        min-width: 35px;
-    }
-    .post .time i {
-        display: block;
-        margin-top: 5px;
-    }
-
-    .post .views i {
-        display: block;
-        margin-top: 5px;
-    }
-
-    .post .comments .commentbg .mark {
-        left: 36%;
-    }
-
-    .headernav {
-        height: auto;
-    }
-
-    .avt {
-        height: auto; 
-        margin-bottom: 15px;
-    }
-
-    .selecttopic select {
-        width: 100%;
-    }
-
-    .avatar .dropdown-menu {
-        left: auto;
-        right: 0;
-    }
-
-    .selecttopic .dropdown-menu {
-        margin-top: -20px;
-    }
-
-    .dropdown.avatar .status {
-        right: 14px;
-    }
-
-    .dropdown.avatar b.caret {
+    .similarposts p span {
         color: #363838;
     }
-    
-}
+
+    .similarposts .fa-info-circle {
+        font-size: 18px;
+        color: #3498db;
+        margin-right: 10px;
+    }
+
+    .similarposts .fa-spinner {
+        font-size: 18px;
+        color: #363838;
+    }
+
+    .postinfotop h2 {
+        color: #363838;
+        font-size: 14px;
+        font-family: 'Open Sans Bold', sans-serif; 
+        padding: 20px;
+        margin: 0;
+        border-bottom: solid 1px #f1f1f1;
+    }
 
 
-/*-----------------------------------------------------------------*/
-/*--- Medium devices (992-1200px) ---*/
-@media (min-width: 992px) and (max-width: 1200px) {
-    .container-fluid {
+
+    /*-----------------------------------------------------------------*/
+    /*--- #04_new_account.html - NEW ACCOUNT ---*/
+
+    .acccap h3 {
+        padding: 7px;
+        margin: 0;
+        border-radius: 2px;
+        background-color: #697683;
+        display: inline-block;
+        color: #ffffff;
+        font-size: 12px;
+        font-family: 'Open Sans Regular', sans-serif;
+
+
+    }
+
+    .acccap .posttext {
+        padding-bottom: 0;
+    }
+
+    .acccap .userinfo {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .accsection.privacy h3 {
+        background-color: #9b59b6;
+    }
+
+    .accsection.privacy .posttext {
         padding: 0;
+        padding-top: 20px;
     }
 
-    .headernav .search .txt {
-        width: 75%;
-    }
-
-    .avatar .dropdown-menu {
-        left: auto;
-        right: 0;
-    }
-    ul.socialicons {
+    .accsection.privacy p {
         margin-bottom: 0;
     }
 
-    /* 2 */
-    .textwraper textarea {
+    .accsection.privacy .checkbox {
+        margin: 20px 0 10px 0;
+    }
 
+    .accsection.survey h3 {
+        background-color: #e67e22;
+    }
+
+    .accsection.networks h3 {
+        background-color: #80d3ab;
+
+    }
+
+    .accsection .htext {
+        width: 40%;
+        float: left; 
+    }
+
+    .accsection .hnotice {
+        width: 60%;
+        float: left;
+        text-align: right;
+    }
+
+    .networks .btn {
+        display: block;
         width: 100%;
-    }
-    /* end 2 */
-}
-
-
-/*-----------------------------------------------------------------*/
-/*--- Large devices (more 1200px) ---*/
-@media (min-width: 1201px) {
-    .container-fluid {
-        padding: 0;
+        margin-bottom: 20px;
+        padding: 20px;
+        color: #ffffff;
+        font-size: 14px;
+        font-family: 'Open Sans Light', sans-serif;
+        text-align: left;
     }
 
-    .container {
-        padding: 0;
+    .networks .btn-fb {
+        background-color: #3b5b99;
     }
-}
+
+    .networks .btn-tw {
+        background-color: #42c8f4;
+    }
+
+    .networks .btn-gp {
+        background-color: #cd3d1e;
+    }
+
+    .networks .btn-pin {
+        background-color: #bd1425;
+    }
+
+    .newaccountpage .postinfobot {
+
+        padding: 0 30px 0 115px;
+
+    }
+
+
+    .accsection .imgsize {
+        color:#989c9e;
+        font-size: 12px;
+        font-family: 'Open Sans Regular', sans-serif;
+        margin: 10px 0;
+    }
+
+    .accsection input[type=password] {
+        margin-bottom: 0;
+    }
+
+
+    /*-----------------------------------------------------------------*/
+    /*--- Extra small devices (less 767px) ---*/
+
+    @media (max-width: 767px) {
+
+        /*--- index.html ---*/
+        .container-fluid {
+            padding: 0;
+        }
+
+        .post .userinfo {
+            width: 30%;
+            padding: 15px 0 15px 15px;
+        }
+
+        .post .posttext {
+            width: 70%;
+            padding-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .post .comments .commentbg {
+            font-size: 12px;
+            padding: 7px;
+            min-width: 35px;
+        }
+        .post .time i {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .post .views i {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .post .comments .commentbg .mark {
+            left: 36%;
+        }
+
+        .post .time,
+        .post .views,
+        .post .views {
+        }
+
+
+        .headernav {
+            height: auto;
+        }
+
+        .avt {
+            height: auto; 
+            margin-bottom: 15px;
+        }
+
+        .selecttopic select {
+            width: 100%;
+        }
+
+        .avatar .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        .selecttopic .dropdown-menu {
+            margin-top: -20px;
+        }
+
+        .dropdown.avatar .status {
+            right: 14px;
+        }
+
+        .dropdown.avatar b.caret {
+            color: #363838;
+        }
+
+        .sociconcent {
+            text-align: center;
+        }
+
+        /*--- 02_topic.html ---*/
+
+        .postinfobot {
+            padding: 10px;
+        }
+
+        .postinfobot .likeblock {
+            width: 100%;
+        }
+
+        .postinfobot .posted {
+            width: 200px;
+            margin: 0;
+        }
+
+        .postinfobot .next {
+            width: 76px;
+            margin: 0;
+        }
+
+        .textwraper textarea {
+            width: 175px;
+        }
+
+        footer ul.socialicons {
+            margin: 0;
+            padding: 0;
+        }
+        /* end 2*/
+
+        /*--- 03_new_topic.html ---*/
+        #pass {
+            margin-bottom: 20px;
+        }
+
+        .accsection .htext, 
+        .accsection .hnotice {
+            width: 100%;
+        }
+
+        .accsection .hnotice {
+            font-size: 10px;
+        }
+
+        .postinfobot .lblfch {
+            width: 80%;
+        }
+        .postinfobot .lblfch label {
+            line-height: normal;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+        }
+        /* end 3 */
+    }
+
+
+    /*-----------------------------------------------------------------*/
+    /*--- Small devices (768 - 991px) ---*/
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        .post .userinfo {
+            width: 15%;
+            padding: 15px 0 15px 15px;
+        }
+
+        .post .posttext {
+            width: 85%;
+            padding-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .post .comments .commentbg {
+            font-size: 12px;
+            padding: 7px;
+            min-width: 35px;
+        }
+        .post .time i {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .post .views i {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .post .comments .commentbg .mark {
+            left: 36%;
+        }
+
+        .headernav {
+            height: auto;
+        }
+
+        .avt {
+            height: auto; 
+            margin-bottom: 15px;
+        }
+
+        .selecttopic select {
+            width: 100%;
+        }
+
+        .avatar .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+
+        .selecttopic .dropdown-menu {
+            margin-top: -20px;
+        }
+
+        .dropdown.avatar .status {
+            right: 14px;
+        }
+
+        .dropdown.avatar b.caret {
+            color: #363838;
+        }
+
+    }
+
+
+    /*-----------------------------------------------------------------*/
+    /*--- Medium devices (992-1200px) ---*/
+    @media (min-width: 992px) and (max-width: 1200px) {
+        .container-fluid {
+            padding: 0;
+        }
+
+        .headernav .search .txt {
+            width: 75%;
+        }
+
+        .avatar .dropdown-menu {
+            left: auto;
+            right: 0;
+        }
+        ul.socialicons {
+            margin-bottom: 0;
+        }
+
+        /* 2 */
+        .textwraper textarea {
+
+            width: 100%;
+        }
+        /* end 2 */
+    }
+
+
+    /*-----------------------------------------------------------------*/
+    /*--- Large devices (more 1200px) ---*/
+    @media (min-width: 1201px) {
+        .container-fluid {
+            padding: 0;
+        }
+
+        .container {
+            padding: 0;
+        }
+    }
