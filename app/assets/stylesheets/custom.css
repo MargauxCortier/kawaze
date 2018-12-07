@@ -53,7 +53,7 @@ a:hover {
 /*--- Footer ---*/
 
 footer {
-    height: 69px;
+    height: 3px;
     line-height: 69px;
     color: #363838;
 }
@@ -83,13 +83,18 @@ ul.socialicons li a:hover {
 
 /*-----------------------------------------------------------------*/
 /*--- Header ---*/
+
+.current_name{
+    padding-top: 10%;
+}
+
 .headernav {
     height: 70px;
     border-bottom: 1px solid #c9cccd;
 }
 
 .img_logo {
-    width: 100%;
+    width: 45px;
     height: auto;
     margin-top: 8%;
     vertical-align: middle;
@@ -99,6 +104,7 @@ ul.socialicons li a:hover {
 .content {
     background-color: #ecf0f1;
     border-top: solid 1px #e0e4e5;
+    padding-top: 
 }
 
 .selecttopic {
@@ -483,7 +489,7 @@ td.chbox {
 
 .post .comments {
     border-bottom: solid 1px #f1f1f1;
-    padding: 18px 0 25px 0;
+    padding: 18px 0 100% 0;
     text-align: center;
 }
 

@@ -42,3 +42,11 @@ website:   	http://www.themepunch.com
 		position:relative;
 		padding:0;
 }
+
+.img_logo {
+    width: 45px;
+    height: auto;
+    margin-top: 8%;
+    vertical-align: middle;
+
+    }

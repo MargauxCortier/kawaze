@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo ">
                 <a href="/">
-                    <div class="img_logo">
-                        <%= image_tag('river1.jpg') %>
+                    <div class="img_logo" style="padding-top:10%">
+                        <%= image_tag('logo1.png', size:"45") %>
                     </div>
                 </a>
             </div> 
@@ -30,35 +30,46 @@
                         </form>
                     </div>
             </div>
-            <div class="col-lg-4 col-xs-12 col-sm-5 col-md-4 avt">
-                    <% if user_signed_in? %>
-                    
-                            <div class="avatar pull-left dropdown">
-                                <a data-toggle="dropdown" href="#">
-                                      <%= image_tag('avatar.jpg') %>
 
-                                </a> 
-                                <b class="caret"></b>
-                                <div class="status green">&nbsp;</div>
-                                <div><%= current_user.name %></div>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
-                                    <li role="presentation"><a href="/users/edit">Edit my Profile</a></li>
-                                    <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-                                </ul>
+            <% if user_signed_in? %>
 
-                            </div>
-                          <div class="clearfix"></div>
+            <div class="col-lg-1 col-xs-6 avt">
+                  
+                      <div class="avatar pull-left dropdown">
+                          <a data-toggle="dropdown" href="#">
+                                <%= image_tag('avatar.jpg') %>
+
+                          </a> 
+                          <b class="caret"></b>
+                          <div class="status green">&nbsp;</div>
+                          <ul class="dropdown-menu" role="menu">
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="/topic/new">My Profile</a></li>
+                              <li role="presentation"><a href="/users/edit">Edit my Profile</a></li>
+                              <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                          </ul>
+                      </div>
+                    <div class="clearfix"></div>
             </div>
-                      <% else %>
-                      <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li><br />
-                      <li class="nav-item"><%= link_to "Sign UP", new_user_registration_path %>
-                      </li>
-                      <% end %>
+
+                    <div class="col-lg-1 col-xs-6 avt">
+                      <div class="current_name">
+                      <%= current_user.name %>
+                      </div>
+                    </div>
+
+            <% else %>
+
+              <div class="col-lg-4 col-xs-6 avt">
+                  <ul>
+                    <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li>
+                    <li class="nav-item"><%= link_to "Sign UP", new_user_registration_path %>
+                    </li>
                   </ul>
               </div>
-              <!-- <div class="clearfix"></div> -->
-          </div>
-      </div>
-  </div>
+
+            <% end %>
+
+        </div>
+    </div>
 </div>
+
