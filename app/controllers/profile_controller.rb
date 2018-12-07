@@ -1,5 +1,6 @@
 class ProfileController < ApplicationController
 before_action :only_see_own_page, only: [:edit]
+
 	def show
 		@user = User.find(params[:id])
 	end
