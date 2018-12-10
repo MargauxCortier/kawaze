@@ -1,0 +1,8 @@
+<% comments.each do |c|%>
+  <%= c.name %> 
+  <%= c.comment %>
+
+  <%= link_to 'Delete', forum_post_comment_path(@forum, post, c),
+              method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Edit", edit_forum_post_comment_path(@forum, post, c), class:"button" %>
+<% end %>

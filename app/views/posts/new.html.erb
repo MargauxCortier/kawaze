@@ -1,0 +1,11 @@
+<% content_for :page_title, "Create a new post" %>
+<%= form_tag(category_forum_posts_path(@category, @forum), :method => :post) do  %>
+            
+            <%= label_tag :title %>
+            <%= text_field_tag :title, nil, class: 'form-control' %>
+
+            <%= label_tag :content %>
+            <%= text_field_tag :content, nil,class: 'form-control' %>
+
+            <%= submit_tag "Submit", class: "button is-primary" %>
+          <% end %>
