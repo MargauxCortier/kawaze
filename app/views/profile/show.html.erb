@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <section class="content">
+    <section class="content" style="padding-bottom:5%">
     <!-- <div class="container">
         <div class="row">
             <div class="col-lg-8 breadcrumbf">
@@ -43,13 +43,16 @@
                                         <div class="col-md-12">
                                             <div class="bio-image">
                                                 <%= image_tag('fbkavatar.jpg') %>
-                                            </div>          
+                                            </div> 
+                                            <div class="city-content">
+                                                <%= @user.city %>
+                                            </div>       
                                         </div>
                                     </div>  
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <div class="bio-content">
-                                        <h1>Bonjour, je suis <%= @user.name %></h1>
+                                        <h1><%= @user.name %></h1>
                                         <h3>Description</h3>
                                         <p><%= @user.description %></p>
 
