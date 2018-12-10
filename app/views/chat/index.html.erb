@@ -1,0 +1,14 @@
+<h1>Chat#index</h1>
+<p>Find me in app/views/chat/index.html.erb</p>
+
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+
+<%= form_with url: '#', html: {id: 'new-message'} do |f| %>
+  <%= f.label :body %>
+  <%= f.text_area :body, id: 'message-body' %>
+  <br>
+  <%= f.submit %>
+<% end %>
