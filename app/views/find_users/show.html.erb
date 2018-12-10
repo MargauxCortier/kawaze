@@ -1,0 +1,28 @@
+<h1>Trouvez des membres qui vivent la même experience que vous, dans votre ville ou ailleurs </h1>
+<br>
+<br>
+
+
+
+<%= search_form_for(@q, url: "/find", method: :get) do |f| %>
+
+  <%= f.label :Trouver_des_membres_dont_la_maladie_contient_les_mots %>
+  <%= f.search_field :illness_cont %>
+
+  <%= f.label :Et_dont_la_ville_est %>
+  <%= f.search_field :city_cont %>
+
+
+  <%= f.submit %>
+<% end %>
+
+<br>
+<p>Voici les membres dont le profil correspond à votre recherche, contactez-les ! </p>
+<br>
+
+
+<% @people.each do |user|  %>
+<a href="/users/<%=user.id%>"> Profil de <strong><%= user.name%></strong></a> <br>
+<% end %>
+
+
