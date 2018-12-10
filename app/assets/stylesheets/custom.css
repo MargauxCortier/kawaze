@@ -63,6 +63,16 @@ a:hover {
     display: table;
 }
 
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 100%;
+    text-align: center;
+}
+
 /*-----------------------------------------------------------------*/
 /*--- EDIT ---*/
 
