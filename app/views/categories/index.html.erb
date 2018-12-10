@@ -15,12 +15,3 @@
     <% end %>
 
 <% end %>
-
-<% category.forums.each do |forum| %>
-            <%= link_to forum.title, category_forum_path(category, forum) %><br />
-            <% if forum.posts.size > 0 %>
-              <%= forum.posts.last.created_at %><br />
-            <% else %>
-              No Topics / Posts
-            <% end %>
-        <% end %>
