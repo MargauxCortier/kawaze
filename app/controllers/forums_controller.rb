@@ -13,7 +13,7 @@ class ForumsController < ApplicationController
     @category = Category.find(params[:category_id])
     @forum = @category.forums.new(title: params[:title])
         if @forum.save
-            redirect_to categories_url
+            redirect_to @category
         else
             render 'new'
         end
@@ -31,7 +31,7 @@ class ForumsController < ApplicationController
       @forum = @category.forums.find(params[:id])
 
       if @forum.update(title: params[:title])
-          redirect_to categories_url
+          redirect_to @category
       else
           render 'edit'
       end
@@ -46,7 +46,7 @@ class ForumsController < ApplicationController
       @category = Category.find(params[:category_id])
       @forum = @category.forums.find(params[:id])
       @forum.destroy
-      redirect_to categories_url
+      redirect_to @category
   end
 
   # private
