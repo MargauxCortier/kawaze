@@ -1,0 +1,15 @@
+<!-- Actions -->
+          <%= link_to "Edit", edit_category_path(@category), class:"button" %>
+        <%= link_to "Delete", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+<!-- /Actions -->
+      <%= @category.title %>
+    <%= @category.forums.count %> Forums
+
+    <% @category.forums.each do |forum| %>
+      <%= link_to forum.title, category_forum_path(@category, forum) %>
+        <% if forum.posts.size > 0 %>
+              <%= forum.posts.last.created_at %><br />
+            <% else %>
+              No Posts
+            <% end %>
+    <% end %>

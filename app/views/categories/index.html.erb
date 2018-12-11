@@ -1,0 +1,17 @@
+<%= link_to "New Category", new_category_path %>
+</br>
+
+<% @categories.each do |category| %>
+      <%= link_to category.title, category_path(category) %>
+        <%= link_to "Edit Category", edit_category_path(category) %>
+        <%= link_to "Delete Category", category_path(category), :confirm => "Are you sure you want to delete this category?", :method => :delete %>
+        <%= link_to "New Forum", new_category_forum_path(category) %>
+        
+    
+    <% if category.forums.size > 0 %>
+      There are <%= category.forums.size %> forums in this category. 
+    <% else %>
+      There are currently no forums.
+    <% end %>
+
+<% end %>

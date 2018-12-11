@@ -3,6 +3,28 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+
+# Gem add home
+gem 'bootstrap', '~> 4.1.3'
+gem 'devise', '~> 4.2'
+gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'font-awesome-rails'
+gem 'better_errors', '~> 2.4'
+gem 'ransack'
+
+# gem 'bulma-rails', '~> 0.7.2'
+# gem 'simple_form'
+
+group :development do
+  # Guard is a command line tool to easily handle events on file system modifications.
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+end
+
+group :development do
+  # reload the browser after changes to assets/helpers/tests
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
@@ -15,13 +37,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
-# Gem add home
-gem 'bootstrap', '~> 4.1.3'
-gem 'devise', '~> 4.2'
-gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
-gem 'font-awesome-rails'
-gem 'ransack'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -46,6 +61,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'binding_of_caller'
+  gem 'pry'
 end
 
 group :development do

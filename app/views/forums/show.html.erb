@@ -1,0 +1,42 @@
+<!-- Actions -->
+      <!-- Right side -->
+          <%= link_to "Edit", edit_category_forum_path(@category, @forum), class:"button" %>
+          <%= link_to "Delete", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+<!-- /Actions -->
+
+      <%= @forum.title %>
+    <%= @forum.posts.count %> Post
+    
+<!-- PostSection -->
+    <% @posts.each do |post| %>
+      <%=  post.title  %>
+          <%= post.content %>
+        <%= post.comments.count %> comments
+        <!-- Right side -->
+          <%= link_to "Edit", edit_category_forum_post_path(@category, @forum, post), class:"button" %>
+        <%= link_to "Delete", category_forum_post_path(@category, @forum, post), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+<!-- /PostSection -->
+<!-- CommentSection -->
+          <%= render 'comments/comment', post: post, comments: post.comments %>
+  <!-- CommentForm -->
+          <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post) do  %>
+            
+            <%= label_tag :content %>
+            <%= text_field_tag :content, nil, placeholder: 'Commentaire', class: 'form-control' %>
+
+            <%= submit_tag "Submit", class: "button is-primary" %>
+          <% end %>
+    <% end %>
+<!-- /PostSection -->
+
+  <!-- PostForm -->
+  <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post) do  %>
+            
+            <%= label_tag :title %>
+            <%= text_field_tag :title, nil, class: 'form-control' %>
+
+            <%= label_tag :content %>
+            <%= text_field_tag :content, nil,class: 'form-control' %>
+
+            <%= submit_tag "Submit", class: "button is-primary" %>
+          <% end %>

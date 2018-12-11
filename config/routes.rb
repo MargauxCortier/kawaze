@@ -15,5 +15,17 @@ Rails.application.routes.draw do
   post '/find', to: 'find_users#find'
  
   get '/new_account', to: 'home#new_account_04'
+
+# Forum routes
+  resources :categories do
+    resources :forums do
+  		resources :posts do
+  			resources :comments
+  		end
+  	end
+  end
+
   mount ActionCable.server => '/cable'
 end
+
+
