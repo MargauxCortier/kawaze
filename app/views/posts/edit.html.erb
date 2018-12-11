@@ -1,2 +1,11 @@
 <% content_for :page_title, "Edit Post" %>
-<%= render 'form' %>
+<%= form_tag(category_forum_post_path(@category, @forum, @post), :method => :put) do  %>
+            
+	<%= label_tag :title %>
+	<%= text_field_tag :title, @post.title, class: 'form-control' %>
+
+	<%= label_tag :content %>
+	<%= text_field_tag :content, @post.content,class: 'form-control' %>
+
+	<%= submit_tag "Submit", class: "button is-primary" %>
+<% end %>
