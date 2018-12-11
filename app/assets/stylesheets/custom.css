@@ -517,6 +517,7 @@ td.chbox {
 .post .posttext {
     width: 85%;
     padding-right: 30px;
+    padding-left: 15px;
     padding-top: 20px;
     padding-bottom: 15px;
 
