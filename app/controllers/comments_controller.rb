@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
         @category = Category.find(params[:category_id])
         @forum = @category.forums.find(params[:forum_id])
         @post = @forum.posts.find(params[:post_id])
-        @comment = @post.comments.create(name: params[:name], comment: params[:comment])
+        @comment = @post.comments.create(content: params[:content])
         @comment.set_user!(current_user)
         redirect_to category_forum_path(@category, @forum)
     end
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     #     @post = @forum.posts.find(params[:post_id])
     #     @comment = @post.comments.find(params[:id])
 
-    #     if @comment.update(name: params[:name], comment: params[:comment])
+    #     if @comment.update(content: params[:content])
     #         redirect_to category_forum_path(@category, @forum)
     #     else
     #         render 'edit'   
