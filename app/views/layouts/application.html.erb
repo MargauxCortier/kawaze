@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/home_background' %>
+    <%= render 'layouts/home_background' unless current_page = 'home/index' %>
     <%= render 'layouts/navbar_test' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
