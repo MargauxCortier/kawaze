@@ -10,6 +10,7 @@ gem 'devise', '~> 4.2'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-rails'
 gem 'better_errors', '~> 2.4'
+gem 'ransack'
 
 # gem 'bulma-rails', '~> 0.7.2'
 # gem 'simple_form'
@@ -36,7 +37,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
