@@ -1,11 +1,8 @@
 <% content_for :page_title, "Edit comment" %>
 <%= form_tag(category_forum_post_comment_path(@category, @forum, @post, @comment), :method => :put) do  %>
-            
-	<%= label_tag :name %>
-	<%= text_field_tag :name, @comment.name, class: 'form-control' %>
 
-	<%= label_tag :comment %>
-	<%= text_field_tag :comment, @comment.comment,class: 'form-control' %>
+	<%= label_tag :content %>
+	<%= text_field_tag :content, @comment.content,class: 'form-control' %>
 
 	<%= submit_tag "Submit", class: "button is-primary" %>
 <% end %>
