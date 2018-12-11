@@ -9,10 +9,10 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'devise', '~> 4.2'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-rails'
-
-gem 'bulma-rails', '~> 0.7.2'
-gem 'simple_form'
 gem 'better_errors', '~> 2.4'
+
+# gem 'bulma-rails', '~> 0.7.2'
+# gem 'simple_form'
 
 group :development do
   # Guard is a command line tool to easily handle events on file system modifications.
