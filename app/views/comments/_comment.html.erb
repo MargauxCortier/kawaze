@@ -1,6 +1,25 @@
 <% comments.each do |c|%> 
-  <%= c.content %>
+  <div class="topwrap" style="border-top: solid 1px #f1f1f1">
+    <div class="userinfo pull-left">
+        <div class="avatar">
+        		<%= image_tag('avatar.jpg') %>
+            <div class="status green">&nbsp;</div>
+        </div>
+    </div>
+    <div class="posttext pull-left">
+        <p><%= c.content %></p>
+    </div>
+    <div class="clearfix"></div>
+	</div>
+	<div class="postinfobot">
+		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am</div>
 
-  <%= link_to 'Delete', category_forum_post_comment_path(@category, @forum, post, c),
-              method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+      <div class="pull-right">  
+        <%= link_to 'Delete', category_forum_post_comment_path(@category, @forum, post, c),
+              method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>                                      
+      </div>
+
+      <div class="clearfix"></div>
+  </div>
+  
 <% end %>

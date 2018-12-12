@@ -1,42 +1,151 @@
-<!-- Actions -->
-      <!-- Right side -->
-          <%= link_to "Edit", edit_category_forum_path(@category, @forum), class:"button" %>
-          <%= link_to "Delete", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
-<!-- /Actions -->
 
-      <%= @forum.title %>
-    <%= @forum.posts.count %> Post
-    
-<!-- PostSection -->
-    <% @posts.each do |post| %>
-      <%=  post.title  %>
-          <%= post.content %>
-        <%= post.comments.count %> comments
-        <!-- Right side -->
-          <%= link_to "Edit", edit_category_forum_post_path(@category, @forum, post), class:"button" %>
-        <%= link_to "Delete", category_forum_post_path(@category, @forum, post), method: :delete, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
-<!-- /PostSection -->
-<!-- CommentSection -->
+<section class="content">
+<!-- HeadSection -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 breadcrumbf" style="line-height: 0 !important; margin-top: 15px">
+        <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %> <span class="diviver">&gt;</span> <%= link_to @forum.title, category_forum_path(@category, @forum) %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1><%= @forum.title %></h1>
+        <p><%= @forum.posts.count %> Posts</p>
+        <%= link_to "Edit", edit_category_forum_path(@category, @forum), class:"btn btn-warning btn-sm" %>
+        <%= link_to "Delete", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-sm" %>
+      </div>
+    </div>
+  </div>
+  <!-- /Actions -->
+<!-- /HeadSection -->
+<br>
+<!-- POSTSection --> 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- POST -->
+        <% @posts.each do |post| %>
+        <div class="post">
+          <div class="topwrap">
+            <div class="userinfo pull-left">
+              <div class="avatar">
+                <%= image_tag('avatar.jpg') %>
+                <div class="status green">&nbsp;</div>
+              </div>
+
+              <div class="icons">
+                <%= image_tag('icon3.jpg') %><%= image_tag('icon4.jpg') %><%= image_tag('icon5.jpg') %>
+              </div>
+            </div>
+            <div class="posttext pull-left">
+              <h2><%= post.title.capitalize %></h2>
+              <p><%= post.content %></p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+
+          <div class="postinfobot">
+
+            <div class="likeblock pull-left">
+              <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>10</a>
+              <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a>
+            </div>
+
+            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am by <%= link_to post.user_id%></div>
+
+            <div class="pull-right">
+              <span class="badge badge-success"><%= post.comments.count %> Commentaires</span> 
+              <%= link_to "Edit", edit_category_forum_post_path(@category, @forum, post), class:"btn-success btn-sm" %>
+              <%= link_to "Delete", category_forum_post_path(@category, @forum, post), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-danger btn-sm" %>                                      
+
+            </div>
+
+            <div class="clearfix"></div>
+          </div>
+      <!-- CommentSection -->
           <%= render 'comments/comment', post: post, comments: post.comments %>
-  <!-- CommentForm -->
-          <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post) do  %>
-            
-            <%= label_tag :content %>
-            <%= text_field_tag :content, nil, placeholder: 'Commentaire', class: 'form-control' %>
 
-            <%= submit_tag "Submit", class: "button is-primary" %>
+        <!-- CommentForm -->
+          <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
+          <div class="topwrap">
+            <div class="userinfo pull-left">
+              <div class="avatar">
+                <%= image_tag('avatar.jpg') %>
+                <div class="status red">&nbsp;</div>
+              </div>
+            </div>
+            <div class="posttext pull-left">
+
+              <div>
+                <%= text_field_tag :content, nil, placeholder: 'Commentaire', class: 'form-control' %>
+              </div>
+            </div>
+          </div>                              
+          <div class="postinfobot">
+
+            <div class="pull-right postreply">
+              <div class="pull-left"><%= submit_tag "Submit", class: "btn btn-primary" %></div>
+
+              <div class="clearfix"></div>
+            </div>
+
+
+            <div class="clearfix"></div>
+          </div>
           <% end %>
-    <% end %>
-<!-- /PostSection -->
+        <!-- /CommentForm -->
+        <!-- /CommentSection -->
+        </div>
+        <% end %>
+        <!-- /POST -->
 
-  <!-- PostForm -->
-  <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post) do  %>
-            
-            <%= label_tag :title %>
-            <%= text_field_tag :title, nil, class: 'form-control' %>
 
-            <%= label_tag :content %>
-            <%= text_field_tag :content, nil,class: 'form-control' %>
+        <!-- PostForm -->
+        <div class="post">
+          <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
+          <div class="topwrap">
+            <div class="userinfo pull-left">
+              <div class="avatar">
+                <%= image_tag('avatar.jpg') %>
+                <div class="status red">&nbsp;</div>
+              </div>
 
-            <%= submit_tag "Submit", class: "button is-primary" %>
+              <div class="icons">
+                <%= image_tag('icon3.jpg') %><%= image_tag('icon4.jpg') %><%= image_tag('icon5.jpg') %><%= image_tag('icon6.jpg') %>
+              </div>
+            </div>
+            <div class="posttext pull-left">
+              <h2>Nouveau Post</h2>
+              <div>
+                <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control' %>
+              </div>
+
+              <div>
+                <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control' %>
+              </div>
+            </div>
+          </div>                              
+          <div class="postinfobot">
+
+            <div class="pull-right postreply">
+              <div class="pull-left"><%= submit_tag "Submit", class: "btn btn-primary" %></div>
+
+              <div class="clearfix"></div>
+            </div>
+
+
+            <div class="clearfix"></div>
+          </div>
           <% end %>
+        </div>
+        <!-- /PostForm -->
+      </div>
+    </div>
+  </div>
+</section>
