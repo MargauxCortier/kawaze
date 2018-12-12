@@ -6,101 +6,110 @@
     <title>Forum :: New topic</title>
 
 </head>
+
 <body>
-              <section class="content">
-                <!-- <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 breadcrumbf">
-                            <a href="#">Borderlands 2</a> <span class="diviver">&gt;</span> <a href="#">General Discussion</a> <span class="diviver">&gt;</span> <a href="#">New Topic</a>
+    <section class="content">
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-lg-8 breadcrumbf">
+                <a href="#">Borderlands 2</a> <span class="diviver">&gt;</span> <a href="#">General Discussion</a> <span class="diviver">&gt;</span> <a href="#">New Topic</a>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8"> -->
+
+
+
+                <!-- POST -->
+
+                <div class="first_row">
+                    <div class="portfolio">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="heading">               
+                                    <h3>Informations du profil</h3> 
+                                </div>
+                            </div>  
                         </div>
-                    </div>
-                </div>
-
-
-               <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8"> -->
-
-
-
-                            <!-- POST -->
-
-                            <div class="first_row">
-                                <div class="portfolio">
-
+                        <div class="bio-info">
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="heading">               
-                                                <h3>Informations du profil</h3> 
-                                            </div>
-                                        </div>  
-                                    </div>
-                                    <div class="bio-info">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="bio-image">
-                                                            <%= image_tag('fbkavatar.jpg') %>
-                                                        </div>          
-                                                    </div>
-                                                </div>  
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="bio-content">
-                                                    <h1>Bonjour, je suis <%= @user.name %></h1>
-                                                    <h3>Voici ma description rapide, je suis une personne ainsi ou ainsi, bref</h3>
-                                                    <% if current_user == @user %> <h3>mon email (visible seulement par moi) : <%= current_user.email%> </h3> <% end %>
-                                                    <% if current_user == @user %><div class="centered">
-                                                        <button class="large button" disabled>Editer le profil</button>
-                                                    </div>
-                                                    <% end %>
-                                                </div>
-                                            </div>  
+                                            <div class="bio-image">
+                                                <%= image_tag('fbkavatar.jpg') %>
+                                            </div>          
                                         </div>
-                                    </div>
-                                </div> 
-
-                             
-                                
-
-
-                                <!-- POST -->
-                               <% if current_user == @user %>
-                               <div class="col-lg-4 col-md-4">
-                                <div class="sidebarblock">
-                                    <h3>Mes conversations en cours</h3>
-                                    <div class="divline"></div>
-                                    <div class="blocktxt">
-                                        <a href="#">This Dock Turns Your iPhone Into a Bedside Lamp</a>
-                                    </div>
-                                    <div class="divline"></div>
-                                    <div class="blocktxt">
-                                        <a href="#">Who Wins in the Battle for Power on the Internet?</a>
-                                    </div>
-                                    <div class="divline"></div>
-                                    <div class="blocktxt">
-                                        <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
-                                    </div>
-                                    <div class="divline"></div>
-                                    <div class="blocktxt">
-                                        <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
-                                    </div>
-                                    <div class="divline"></div>
-                                    <div class="blocktxt">
-                                        <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
-                                    </div>
+                                    </div>  
                                 </div>
-                                </div> 
-                                <% end %> 
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="bio-content">
+                                        <h1>Bonjour, je suis <%= @user.name %></h1>
+                                        <h3>Description</h3>
+                                        <p><%= @user.description %></p>
 
+                                        <% if current_user == @user %> <h3>mon email (visible seulement par moi) : <%= current_user.email%> </h3> <% end %>
+                                        <% if current_user == @user %>
+                                        <div class="centered">
+                                            <a class="btn btn-primary btn-lg" href="/users/edit" role="button">Editer</a>
+                                            <% end %>
+                                        
+                                        <% if current_user != @user %>
+                                        <div class="centered">
+                                            <a class="btn btn-primary btn-lg" href="/chat/:id/:id" role="button">Contacter par message</a>
+                                            <% end %>
+
+                                        
+
+
+                                        </div>
+                                        
+                                    </div>
+                                </div>  
                             </div>
-                        <!-- </div>
-                    </div> -->
+                        </div>
+                    </div> 
 
+                    <!-- POST -->
 
+                   <% if current_user == @user %>
+                   <div class="col-lg-4 col-md-4">
+                    <div class="sidebarblock">
+                        <h3>Mes conversations en cours</h3>
+                        <div class="divline"></div>
+                        <div class="blocktxt">
+                            <a href="#">This Dock Turns Your iPhone Into a Bedside Lamp</a>
+                        </div>
+                        <div class="divline"></div>
+                        <div class="blocktxt">
+                            <a href="#">Who Wins in the Battle for Power on the Internet?</a>
+                        </div>
+                        <div class="divline"></div>
+                        <div class="blocktxt">
+                            <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
+                        </div>
+                        <div class="divline"></div>
+                        <div class="blocktxt">
+                            <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
+                        </div>
+                        <div class="divline"></div>
+                        <div class="blocktxt">
+                            <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
+                        </div>
+                    </div>
+                    </div> 
+                    <% end %> 
 
-                    <!--<div class="container">
+                </div>
+  </section>
+
+<!-- 
+                    <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-xs-12">
                                 <div class="pull-left"><a href="#" class="prevnext"><i class="fa fa-angle-left"></i></a></div>
@@ -127,12 +136,12 @@
                             </div>
                         </div>
                     </div> 
+ -->
 
 
-                </section>
 
 
-    <!-- LOOK THE DOCUMENTATION FOR MORE INFORMATIONS -->
+    <!-- LOOK THE DOCUMENTATION FOR MORE INFORMATIONS 
     <script type="text/javascript">
 
         var revapi;

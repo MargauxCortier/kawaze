@@ -21,6 +21,8 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'devise', '~> 4.2'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-rails'
+gem 'ransack'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
