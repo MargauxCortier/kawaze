@@ -52,6 +52,7 @@ a:hover {
 /*-----------------------------------------------------------------*/
 /*--- INDEX ---*/
 
+
 #category_content {
     display: flex;
     align-items: center;
@@ -104,9 +105,11 @@ a:hover {
     text-align: center;
 }
 
+
 .content_categories {
     background: white;
 }
+
 
 /*-----------------------------------------------------------------*/
 /*--- EDIT ---*/
@@ -913,10 +916,12 @@ content {
 .bio-content p{
     font-weight:600;
     font-size:15px;
+
 }
 
 .city-content {
     text-align: center;
+
 }
 
 

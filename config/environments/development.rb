@@ -14,6 +14,8 @@ Rails.application.configure do
  # Show full error reports.
  config.consider_all_requests_local = true
 
+ 
+
  # Enable/disable caching. By default caching is disabled.
  # Run rails dev:cache to toggle caching.
  if Rails.root.join('tmp', 'caching-dev.txt').exist?
@@ -28,6 +30,9 @@ Rails.application.configure do
 
    config.cache_store = :null_store
  end
+
+config.action_cable.url = 'ws://localhost:3000/cable'
+config.action_cable.allowed_request_origins = [ 'http://localhost:3000', 'http://127.0.0.1:3000' ]
 
  # Store uploaded files on the local file system (see config/storage.yml for options)
  config.active_storage.service = :local

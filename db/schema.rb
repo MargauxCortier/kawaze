@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2018_12_10_164817) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -61,4 +69,5 @@ ActiveRecord::Schema.define(version: 2018_12_10_164817) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "users"
 end

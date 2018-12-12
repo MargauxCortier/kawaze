@@ -8,7 +8,11 @@
 </head>
 
 <body>
+
     <div class="content" style="padding-bottom:5%">
+
+    <section class="content">
+
     <!-- <div class="container">
         <div class="row">
             <div class="col-lg-8 breadcrumbf">
@@ -40,6 +44,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="row">
+
                                         <div class="col-xs-12">
                                             <div class="bio-image">
                                                 <%= image_tag('fbkavatar.jpg') %>
@@ -47,12 +52,19 @@
                                             <div class="city-content">
                                                 <%= @user.city %>
                                             </div>       
+
+                                        
                                         </div>
                                     </div>  
                                 </div>
                                 <div class="col-lg-4 col-md-4">
                                     <div class="bio-content">
+
                                         <h1><%= @user.name %></h1>
+                                        <h3>Description</h3>
+                                        <p><%= @user.description %></p>
+
+                                        <h1>Bonjour, je suis <%= @user.name %></h1>
                                         <h3>Description</h3>
                                         <p><%= @user.description %></p>
 
@@ -60,9 +72,18 @@
                                         <% if current_user == @user %>
                                         <div class="centered">
                                             <a class="btn btn-primary btn-lg" href="/users/edit" role="button">Editer</a>
+                                            <% end %>
+                                        
+                                        <% if current_user != @user %>
+                                        <div class="centered">
+                                            <a class="btn btn-primary btn-lg" href="/chat" role="button">Contacter par message</a>
+                                            <% end %>
+
 
                                         </div>
-                                        <% end %>
+
+                    
+
                                     </div>
                                 </div>  
                             </div>
@@ -100,7 +121,11 @@
                     <% end %> 
 
                 </div>
+
   </div>
+
+  </section>
+
 
 <!-- 
                     <div class="container">
@@ -155,6 +180,6 @@
 
         </script>
 
-        <!-- END REVOLUTION SLIDER -->
+         END REVOLUTION SLIDER -->
     </body>
     </html>
