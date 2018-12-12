@@ -1,103 +1,151 @@
 
+
+<!---------------------------- TEST ----------------------------->
+
 <div class="content">
-<!-- GROS TEST FORMULAIRE -->
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="container" style="max-width:800px;padding:40px 20px;background:#ebeff2">
-
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>   
-    <form class="form-horizontal" role="form">
-
-     <div class="form-group">
-      <label for="name" class ="control-label col-sm-3">Name</label>
-        <div class="col-sm-8">      
-          <%= f.text_field :name, autofocus: true %>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 breadcrumbf">
+        <a href="#">Edit <%= resource_name.to_s.humanize %></a> 
+      </div>
     </div>
-
-    <div class="form-group">
-      <label for="description" class ="control-label col-sm-3">description</label>
-        <div class="col-sm-8">
-          <%= f.text_field :description, autofocus: true %>    
-        </div>
-    </div>
-    
-      <div class="form-group">
-        <label for="illness" class ="control-label col-sm-3">illness</label>
-          <div class="col-sm-8">
-            <%= f.text_field :illness, autofocus: true %>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email" class ="control-label col-sm-3">email</label>
-          <div class="col-sm-8">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>   
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="city" class ="control-label col-sm-3">city</label>
-          <div class="col-sm-8">
-            <%= f.text_field :city, autofocus: true, autocomplete: "city" %>   
-          </div>
-      </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <div class="form-group">
-        <label for="pwd" class ="control-label col-sm-3">password</label>
-          <div class="col-sm-8">
-            <%= f.password_field :password, autocomplete: "new-password" %>
-            <% if @minimum_password_length %>
-            <em><%= @minimum_password_length %> characters minimum</em><br /> 
-            <% end %>
-            <i>(leave blank if you don't want to change it)</i><br />
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="pwd" class ="control-label col-sm-3">password confirmation</label>
-          <div class="col-sm-8">
-            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label for="pwd" class ="control-label col-sm-3">current password</label>
-          <div class="col-sm-8">
-            <i>(we need your current password to confirm your changes)</i>
-            <%= f.password_field :current_password, autocomplete: "current-password" %><br />
-          </div>
-      </div>
-
-        <div class="col-sm-offset-2 col-sm-8">
-         <button type="submit" class="btn btn-default">Update</button><br />
-       </div>
-
-     </form>
-    </div>
-
-    <div class="container" style="max-width:800px;padding:10px 20px;background:#ebeff2">
-      <form class="form-horizontal" role="form">
-        <div class="form-group">
-          <h2>Unhappy ?</h2>
-          <label for="pwd" class ="control-label col-sm-3">Cancel my account</label>  
-            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-        </div>
-           <%= link_to "Back", :back %>
-    </form>
   </div>
-  <% end %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <!-- POST -->
+        <div class="post">
+          <div class="form newtopic">
+            <div class="postinfotop">
+              <h2>Modifier mon profil</h2>
+            </div>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+
+            <!-- acc section -->
+            <div class="accsection">
+
+              <div class="topwrap">
+
+
+                <div class="posttext pull-left">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                      <%= f.text_field :name, autofocus: true, :placeholder=>"name", :class=>"form-control" %>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                      <%= f.text_field :illness, autofocus: true, :placeholder=>"illness", :class=>"form-control" %>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                      <%= f.text_field :city, autofocus: true, autocomplete: "city", :placeholder=>"city", :class=>"form-control" %>
+                    </div>
+                  </div>
+
+                  <div>
+                    <%= f.text_field :description, autofocus: true, :placeholder=>"description", :class=>"form-control" %>
+                  </div>
+
+                  <div>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder=>"Email", :class=>"form-control", :id=>"register-email" %><br />
+                  </div>
+
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                    <% end %>
+
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                      <%= f.password_field :password, autocomplete: "new-password", :placeholder=>"New Password", :class=>"form-control", :id=>"pass" %><i>(leave blank if you don't want to change it)</i><br />
+                      <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder=>"New Password", :class=>"form-control", :id=>"pass2" %>
+                    </div>
+                  </div>
+
+                    <div>
+                      <%= f.password_field :current_password, autocomplete: "current-password", :placeholder=>"Current Password", :class=>"form-control" %>
+                      <i>(we need your current password to confirm your changes)</i>
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+              </div>  
+            </div><!-- acc section END -->
+
+
+            <div class="postinfobot">
+
+              <div class="pull-right postreply">
+                <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
+                <div class="pull-left"><%= f.submit "Update", :id=>"reg-submit", :class=>"btn btn-primary" %></div>
+              </div>
+              
+              <div class="clearfix"></div>
+            </div>
+ 
+            <% end %>
+
+          </div><!-- POST -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 breadcrumbf">
+          <a href="#">Unhappy ?</a> 
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+
+          <!-- POST -->
+          <div class="post">
+            <div class="form newtopic">
+              <div class="postinfotop">
+                <h2>Cancel my account</h2>
+              </div>
+
+              <!-- acc section -->
+              <div class="accsection">
+
+                <div class="posttext pull-left">
+                  <div class="row">
+
+                    <div class="col-lg-4 col-md-4 col-xs-4">
+                      <p>Unhappy?</p>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5 col-xs-5">
+                      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-xs-3">
+                      <%= link_to "Back", :back %>
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>  
+            </div><!-- acc section END -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>
-
-
-
-
-
-
-
-
