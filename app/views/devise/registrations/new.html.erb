@@ -1,56 +1,102 @@
 
+
+<!---------------------------- TEST ----------------------------->
+
 <div class="content">
-
-  <div style="text-align:center;padding-bottom:5%;padding-top:5%;">
-    <h2>Sign up</h2>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 breadcrumbf">
+        <a href="#">Create New account</a> 
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_field :description, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :illness %><br />
-      <%= f.text_field :illness, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :city %><br />
-      <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br />
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
   </div>
-</div>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+
+        <!-- POST -->
+        <div class="post">
+          <div class="form newtopic">
+            <div class="postinfotop">
+              <h2>Create New Account</h2>
+            </div>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <!-- acc section -->
+            <div class="accsection">
+
+              <div class="acccap">
+                <div class="userinfo pull-left">&nbsp;</div>
+                <div class="posttext pull-left"><h3>Required Fields</h3></div>
+                <div class="clearfix"></div>
+              </div>
+
+              <div class="topwrap">
+
+
+                <div class="posttext pull-left">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                      <%= f.text_field :name, autofocus: true, :placeholder=>"name", :class=>"form-control" %>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                      <%= f.text_field :illness, autofocus: true, :placeholder=>"illness", :class=>"form-control" %>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                      <%= f.text_field :city, autofocus: true, autocomplete: "city", :placeholder=>"city", :class=>"form-control" %>
+                    </div>
+                  </div>
+
+                  <div>
+                    <%= f.text_field :description, autofocus: true, :placeholder=>"description", :class=>"form-control" %>
+                  </div>
+
+                  <div>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder=>"Email", :class=>"form-control", :id=>"register-email" %><br />
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                      <%= f.password_field :password, autocomplete: "new-password", :placeholder=>"Password", :class=>"form-control", :id=>"pass" %>
+                      <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder=>"Retype Password", :class=>"form-control", :id=>"pass2" %>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="clearfix"></div>
+              </div>  
+            </div><!-- acc section END -->
+
+
+            <div class="postinfobot">
+
+              <div class="pull-right postreply">
+                <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
+                <div class="pull-left"><%= f.submit "Sign up", :id=>"reg-submit", :class=>"btn btn-primary" %></div>
+              </div>
+              
+                <%= render "devise/shared/links" %>
+
+              <div class="clearfix"></div>
+            </div>
+
+            <% end %>
+
+          </div><!-- POST -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
