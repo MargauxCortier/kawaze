@@ -1,4 +1,4 @@
-<% comments.each do |c|%> 
+<% comments.each do |comment|%> 
   <div class="topwrap" style="border-top: solid 1px #f1f1f1">
     <div class="userinfo pull-left">
         <div class="avatar">
@@ -7,15 +7,15 @@
         </div>
     </div>
     <div class="posttext pull-left">
-        <p><%= c.content %></p>
+        <p><%= comment.content %></p>
     </div>
     <div class="clearfix"></div>
 	</div>
 	<div class="postinfobot">
-		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am</div>
+		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= comment.created_at.strftime("%d %b a %H:%M%p")%> par <%= link_to User.find(comment.user_id).name, "/users/"+comment.user_id.to_s %> </div>
 
       <div class="pull-right">  
-        <%= link_to 'Supprimer', category_forum_post_comment_path(@category, @forum, post, c),
+        <%= link_to 'Supprimer', category_forum_post_comment_path(@category, @forum, post, comment),
               method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>                                      
       </div>
 

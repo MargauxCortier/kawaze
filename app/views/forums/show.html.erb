@@ -58,7 +58,7 @@
               <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a>
             </div>
 
-            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am by <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
+            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= post.created_at.strftime("%d %b a %H:%M%p")%> par <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
 
             <div class="pull-right">
               <span class="badge badge-success"><%= post.comments.count %> Commentaires</span> 

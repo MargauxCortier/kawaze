@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 breadcrumbf">
-                <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %>
+                <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Catégories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %>
             </div>
         </div>
         <div class="row">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="postinfobot">          
                         <%= link_to "Editer le Forum", edit_category_forum_path(@category, forum), class:"btn-warning btn-sm" %>
-                        <%= link_to "Supprimer le Forum", category_forum_path(@category, forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-danger btn-sm" %>
+                        <%= link_to "Supprimer le Forum", category_forum_path(@category, forum), method: :delete, data: { confirm: "Etes-vous sûr?" }, class:"btn-danger btn-sm" %>
                     </div>
                 </div>
                 <% end %>

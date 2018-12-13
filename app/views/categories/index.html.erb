@@ -2,7 +2,7 @@
 	<div class="container">
     <div class="row">
       <div class="col-lg-8 breadcrumbf">
-        <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %>
+        <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Catégories", categories_path %>
       </div>
     </div>
 
@@ -23,16 +23,16 @@
 					<div style="padding: 10px 94px 0px 94px ">
 						<h2><%= link_to category.title, category_path(category) %></h2>
 						<% if category.forums.size > 0 %>
-						<p>There is <%= category.forums.size %> forum in this category.</p>
+						<p>Il y a <%= category.forums.size %> forum dans cette catégorie.</p>
 						<% elsif category.forums.size > 1 %>
-						<p>There are <%= category.forums.size %> forums in this category.</p>
+						<p>Il y a <%= category.forums.size %> forums dans cette .</p>
 						<% else %>
-						<p>There are currently no forums.</p>
+						<p>Il n'y a actuellement aucun forum dans cette catégorie.</p>
 						<% end %>
 					</div>
 					<div class="postinfobot">
 						<%= link_to "Editer la Categorie", edit_category_path(category), class: "btn-warning btn-sm" %>
-						<%= link_to "Supprimer la Categorie", category_path(category), :confirm => "Are you sure you want to delete this category?", :method => :delete, class: "btn-danger btn-sm" %>
+						<%= link_to "Supprimer la Categorie", category_path(category), :confirm => "Etes-vous sûr de vouloir supprimer cette catégorie?", :method => :delete, class: "btn-danger btn-sm" %>
 						<%= link_to "Créer un Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
 					</div>
 			</div>
