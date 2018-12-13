@@ -31,6 +31,7 @@
 
 -------------------------------------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono');
 
 /*-----------------------------------------------------------------*/
 /*--- General ---*/
@@ -57,20 +58,23 @@ pt-1{
     padding-top:40px!important;
 }
 
-.center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+.btn-primary{
+    background-color: #30336b!important;
+    border-color: #30336b!important;
 }
 
 /*-----------------------------------------------------------------*/
 /*--- HEADERNAV ---*/
 
 .text_logo{
-    text-align: center;
+    display: flex;
+    justify-content: center;
     padding-top: 10px;
-    font-size: 70px;
+    font-size: 60px;
     color: #30336b;
+}
+.space{
+    margin:10px;   
 }
 
 .button_home_page{
@@ -82,9 +86,19 @@ pt-1{
     margin:10px;
 }
 
+
+
+
 /*-----------------------------------------------------------------*/
 /*--- INDEX ---*/
 
+.call_to_action{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;    
+    text-align: center;
+    color: #30336b;
+    padding: 20px;
+}
 
 #category_content {
     display: flex;
