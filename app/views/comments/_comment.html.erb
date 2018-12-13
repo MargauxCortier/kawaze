@@ -12,7 +12,7 @@
     <div class="clearfix"></div>
 	</div>
 	<div class="postinfobot">
-		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= comment.created_at.strftime("%d %b a %H:%M%p")%> par <%= link_to User.find(comment.user_id).name, "/users/"+comment.user_id.to_s %> </div>
+		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= comment.created_at.strftime("%d %b a %H:%M")%> par <%= link_to User.find(comment.user_id).name, "/users/"+comment.user_id.to_s %> </div>
 
       <div class="pull-right">  
         <%= link_to 'Supprimer', category_forum_post_comment_path(@category, @forum, post, comment),
