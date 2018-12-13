@@ -1,8 +1,16 @@
 
-<div class="message">
-	<strong><%= message.user_id %></strong> says:
-	<%= message.body %>
-	<br>
-	<small>at <%= l message.created_at, format: :short %></small>
-	<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-7 col-md-7">
+			<div class="post" style="padding:2%">
+				<strong><%= message.user_id %></strong> says :
+				<div class="chat_content">
+					<%= message.body %>
+				</div>
+				<div class="chat_content">
+					<small>at <%= l message.created_at, format: :short %></small>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

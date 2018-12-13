@@ -46,6 +46,7 @@
             <div class="posttext pull-left">
               <h2><%= post.title.capitalize %></h2>
               <p><%= post.content %></p>
+
             </div>
             <div class="clearfix"></div>
           </div>
@@ -70,7 +71,7 @@
       <!-- CATEGORIES -->
       <div class="col-lg-3 col-md-3">
         <div class="sidebarblock">
-          <h3>CATEGORIES</h3>
+          <h3><%= link_to 'CATEGORIES', categories_path %></h3>
           <div class="divline"></div>
           <div class="blocktxt">
             <a href="#"><%= image_tag('icons-heart-1.png') %> Mon jolie coeur</a>
