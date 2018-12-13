@@ -31,6 +31,7 @@
 
 -------------------------------------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono');
 
 /*-----------------------------------------------------------------*/
 /*--- General ---*/
@@ -49,9 +50,56 @@ a:hover {
     color: #989c9e;   
 }
 
+p-1{
+    padding:40px!important;
+}
+
+pt-1{
+    padding-top:40px!important;
+}
+
+.btn-primary{
+    background-color: #30336b!important;
+    border-color: #30336b!important;
+}
+
+/*-----------------------------------------------------------------*/
+/*--- HEADERNAV ---*/
+
+.text_logo{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 60px;
+    color: #30336b;
+}
+.space{
+    margin:10px;   
+}
+
+.button_home_page{
+    display: flex;
+    justify-content: center;
+}
+
+.button_sign{
+    margin:10px;
+}
+
+
+
+
 /*-----------------------------------------------------------------*/
 /*--- INDEX ---*/
 
+
+.call_to_action{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;    
+    text-align: center;
+    color: #30336b;
+    padding: 20px;
+}
 
 #category_content {
     display: flex;
@@ -65,12 +113,6 @@ a:hover {
     align-items: center;
     background-color: Transparent;
     background:  rgba(255, 255, 255, 0.6);
-}
-
-#category_content:hover {
-    -webkit-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.8);
 }
 
 .flex-container {
@@ -246,7 +288,7 @@ ul.socialicons li a:hover {
     background-color: #1abc9c;
 }
 
-.avt .btn-primary:hover, 
+.avt .btn-primary:hover,
 .avt .btn-primary:focus, 
 .avt .btn-primary:active, 
 .avt .btn-primary.active{
