@@ -1,43 +1,41 @@
 <section class="content">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 breadcrumbf">
-        <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-lg-8">
-        <h2><%= @category.title %></h2>
-        <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), categories_path, class: "btn btn-secondary" %>
-        <%= link_to "New Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
-      </div>
-    </div>
-  </div>
-
-<br>
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <% @category.forums.each do |forum| %>
-        <div class="post">
-          <div style="padding: 10px 94px 0px 94px ">
-            <h2><%= link_to forum.title, category_forum_path(@category, forum) %></h2>
-            <% if forum.posts.size > 0 %>
-            <p>Dernier post le : <%= forum.posts.last.created_at.strftime("%A %d %B %Y a %H:%M") %></p>
-            <% else %>
-            <p>There are currently no forums.</p>
-            <% end %>
-          </div>
-          <div class="postinfobot">
-            <%= link_to "Edit", edit_category_path(@category), class: "btn-warning btn-sm" %>
-            <%= link_to "Delete Forum", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-danger btn-sm" %>
-            <%= link_to "New Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
-          </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 breadcrumbf">
+                <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %>
+            </div>
         </div>
-        <% end %>
-      </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <h2><%= @category.title %></h2>
+                <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), categories_path, class: "btn btn-secondary" %>
+                <%= link_to "Editer la Categorie", edit_category_path(@category), class: "btn-warning btn-sm" %>
+                <%= link_to "Supprimer la Categorie", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-danger btn-sm" %>
+                <%= link_to "Créer un nouveau Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
+            </div>
+        </div>
     </div>
-  </div>
+    <br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <% @category.forums.each do |forum| %>
+                <div class="post">
+                    <div style="padding: 10px 94px 0px 94px ">
+                        <h2><%= link_to forum.title, category_forum_path(@category, forum) %></h2>
+                        <% if forum.posts.size > 0 %>
+                        <p>Dernier post le : <%= forum.posts.last.created_at.strftime("%A %d %B %Y a %H:%M") %></p>
+                        <% else %>
+                        <p>Il n'y a actuellement pas de posts.</p>
+                        <% end %>
+                    </div>
+                    <div class="postinfobot">          
+                        <%= link_to "Editer le Forum", edit_category_forum_path(@category, forum), class:"btn-warning btn-sm" %>
+                        <%= link_to "Supprimer le Forum", category_forum_path(@category, forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-danger btn-sm" %>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </section>

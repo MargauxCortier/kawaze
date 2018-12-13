@@ -1,2 +1,35 @@
-<% content_for :page_title, "Create a new Forum" %>
-<%= render 'form' %>
+<% content_for :page_title, "Créer un nouveau Forum" %>
+<section class="content">
+	<div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Nouveau Forum</h1>
+      </div>
+    </div>
+  </div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="post">
+					<%= form_tag(category_forums_path(@category), :method => :post, class: 'form newtopic') do  %>
+					<div class="topwrap">
+						<div class="posttext pull-left">
+							<div style="padding-left: 94px ">
+								<%= text_field_tag :title, nil, placeholder: 'Titre du Forum', class: 'form-control' %>
+							</div>
+						</div>
+					                             
+						<div class="pull-right">
+							<div class="pull-right"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
+
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+						</div> 
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>

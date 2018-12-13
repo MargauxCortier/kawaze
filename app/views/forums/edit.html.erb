@@ -1,8 +1,35 @@
-<% content_for :page_title, "Edit Forum" %>
-<%= form_tag(category_forum_path(@category, @forum), :method => :put) do  %>
-            
-  <%= label_tag :title %>
-  <%= text_field_tag :title, @forum.title, class: 'form-control' %>
+<% content_for :page_title, "Editer le Forum" %>
+<section class="content">
+	<div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Editer le Forum</h1>
+      </div>
+    </div>
+  </div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="post">
+					<%= form_tag(category_forum_path(@category, @forum), :method => :put, class: 'form newtopic') do  %>
+					<div class="topwrap">
+						<div class="posttext pull-left">
+							<div style="padding-left: 94px ">
+								<%= text_field_tag :title, @forum.title, placeholder: 'Titre du Forum', class: 'form-control' %>
+							</div>
+						</div>
+					                             
+						<div class="pull-right">
+							<div class="pull-right"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
 
-  <%= submit_tag "Submit", class: "button is-primary" %>
-<% end %>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+						</div> 
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
