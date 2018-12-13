@@ -24,12 +24,12 @@
   <!-- /Actions -->
 <!-- /HeadSection -->
 <br>
-<!-- POSTSection --> 
+<!-- POSTsSection --> 
   <div class="container">
     <div class="row">
       <div class="col">
 
-        <!-- POST -->
+        <!-- PostSection -->
         <% @posts.each do |post| %>
         <div class="post">
           <div class="topwrap">
@@ -69,6 +69,7 @@
 
             <div class="clearfix"></div>
           </div>
+        <!-- /PostSection -->
       <!-- CommentSection -->
           <%= render 'comments/comment', post: post, comments: post.comments %>
 
@@ -104,7 +105,7 @@
         <!-- /CommentSection -->
         </div>
         <% end %>
-        <!-- /POST -->
+        <!-- /POSTsSection -->
 
 
         <!-- PostForm -->

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Forum :: Home Page</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forum :: Home Page</title>
 
-    </head>
+</head>
 
-            <!-- //Slider -->
+<!-- //Slider -->
 
-  <body> 
+<body> 
 
 <!--         <div class="container-fluid">
 -->
@@ -17,98 +17,106 @@
 
   <div class="container">
     <div class="row">
-        
-            <!-- POST -->
-              <div class="col-lg-12 col-md-12" style="margin-top:1%">
-                <div class="post">
-                  <div class="call_to_action" >
-                      <strong style="font-size:25px">Echange et mise en contact</strong><br />
-                      <strong style="font-size:20px">Forum de discution gratuit traitant uniquement de votre maladie</strong>
-                    </div>
-                <div class="clearfix"></div>
-              </div>  
+
+      <!-- POST -->
+      <div class="col-lg-12 col-md-12" style="margin-top:1%">
+        <div class="post">
+          <div class="call_to_action" >
+            <strong style="font-size:25px">Echange et mise en contact</strong><br />
+            <strong style="font-size:20px">Forum de discution gratuit traitant uniquement de votre maladie</strong>
+          </div>
+          <div class="clearfix"></div>
+        </div>  
+      </div>
+      <!-- POST -->
+
+      <!-- POST AND CATEGORIES -->
+
+      <!-- POST -->
+      <div class="col-g-9 col-md-9">
+        <% @posts.last(3).each do |post| %>
+        <div class="post">
+          <div class="topwrap">
+            <div class="userinfo pull-left">
+              <div class="avatar">
+                <%= image_tag('avatar.jpg') %>
+                <div class="status green">&nbsp;</div>
+              </div>
             </div>
-          <!-- POST -->
-
-        <!-- POST AND CATEGORIES -->
-
-              <!-- POST -->
-                <div class="col-g-9 col-md-9">
-                  <div class="post">
-                    <div class="wrap-ut pull-left">
-
-                            <div class="posttext pull-left">
-                                <h2>My heart is so big that is hurt</h2>
-                                <p>hefwefh hfehjfj kjcszxjck dshaj jd kjhasdjkz jcsakc jdskhfj dbvjk ckjdwe wef vdfkcksjsd jk cjkv cnxcjn ds xznjkcjas jdkffh sdfjdsjkfh.</p>
-                            </div>
-                            <div class="clearfix"></div>
-                      </div>
-                      <div class="postinfo pull-left">
-                        <div class="comments">
-                            <div class="commentbg">
-                                560
-                                <div class="mark"></div>
-                            </div>
-
-                        </div>
-                        <div class="views"><i class="fa fa-eye"></i> 1,568</div>
-                        <div class="time"><i class="fa fa-clock-o"></i> 24 min</div>                                    
-                      </div>
-                    <div class="clearfix"></div>
-                  </div>
-                </div>
-              <!--/ POST -->
-
-                <!-- CATEGORIES -->
-                  <div class="col-lg-3 col-md-3">
-                      <div class="sidebarblock">
-                          <h3>CATEGORIES</h3>
-                            <div class="divline"></div>
-                              <div class="blocktxt">
-                                  <a href="#"><%= image_tag('icons-heart-1.png') %> Mon jolie coeur</a>
-                              </div>
-                            <div class="divline"></div>
-                              <div class="blocktxt">
-                                <a href="#"><%= image_tag('icons-brain-1.png') %> Mon incroyable cerveau</a>
-                              </div>
-                            <div class="divline"></div>
-                              <div class="blocktxt">
-                                  <a href="#"><%= image_tag('icons-bra-1.png') %> Ma belle poitrine</a>
-                              </div>
-                            <div class="divline"></div>
-                              <div class="blocktxt">
-                                  <a href="#"><%= image_tag('icons-kidney-1.png') %> Mes grands poumons</a>
-                              </div>
-                            <div class="divline"></div>
-                              <div class="blocktxt">
-                                  <a href="#"><%= image_tag('icons-lungs-1.png') %> Mes rins</a>
-                            </div>
-                      </div>
-                  </div>
-                <!--/ CATEGORIES -->
-                
+            <div class="posttext pull-left">
+              <h2><%= post.title.capitalize %></h2>
+              <p><%= post.content %></p>
             </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="postinfobot">
+
+            <div class="likeblock pull-left">
+              <a href="#" class="up"><i class="fa fa-thumbs-o-up"></i>10</a>
+              <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a>
+            </div>
+
+            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= post.created_at.strftime("%d %b a %H:%M%p") %> par <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
+
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <% end %>
+      </div>
+
+      <!--/ POST -->
+
+      <!-- CATEGORIES -->
+      <div class="col-lg-3 col-md-3">
+        <div class="sidebarblock">
+          <h3>CATEGORIES</h3>
+          <div class="divline"></div>
+          <div class="blocktxt">
+            <a href="#"><%= image_tag('icons-heart-1.png') %> Mon jolie coeur</a>
+          </div>
+          <div class="divline"></div>
+          <div class="blocktxt">
+            <a href="#"><%= image_tag('icons-brain-1.png') %> Mon incroyable cerveau</a>
+          </div>
+          <div class="divline"></div>
+          <div class="blocktxt">
+            <a href="#"><%= image_tag('icons-bra-1.png') %> Ma belle poitrine</a>
+          </div>
+          <div class="divline"></div>
+          <div class="blocktxt">
+            <a href="#"><%= image_tag('icons-kidney-1.png') %> Mes grands poumons</a>
+          </div>
+          <div class="divline"></div>
+          <div class="blocktxt">
+            <a href="#"><%= image_tag('icons-lungs-1.png') %> Mes rins</a>
           </div>
         </div>
-      <!-- POST AND CATEGORIES -->
+      </div>
+      <!--/ CATEGORIES -->
 
     </div>
   </div>
+</div>
+<!-- POST AND CATEGORIES -->
+
+</div>
+</div>
 
 </div>
 
 <!-- 
-        <div id="category_content" class="flex-container">
-          <div class="row">
-            <div class="col-xl-12 mx-auto">
-              <span>
-                <h2><a href="/">Category</a></h2>
-              </span>
-            </div>
-          </div>
-        </div> -->
+<div id="category_content" class="flex-container">
+<div class="row">
+<div class="col-xl-12 mx-auto">
+<span>
+<h2><a href="/">Category</a></h2>
+</span>
+</div>
+</div>
+</div> -->
 
 
-  </body>
+</body>
 
 </html>

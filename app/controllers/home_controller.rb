@@ -1,9 +1,7 @@
 class HomeController < ApplicationController
 	
-	def index2
-	end
-
 	def index
+		@posts = Post.all
 	end
 
 	def new_account_04
