@@ -38,9 +38,9 @@ website:   	http://www.themepunch.com
 }
 
 .tp-banner-fullscreen-container {
-		width:100%;
-		position:relative;
-		padding:0;
+	width:100%;
+	position:relative;
+	padding:0;
 }
 
 .img_logo {
@@ -49,4 +49,38 @@ website:   	http://www.themepunch.com
     margin-top: 8%;
     vertical-align: middle;
 
-    }
+}
+
+/*********************************************
+    -   IMPORT ANNIMATION BANNER CONTAINERS  -
+**********************************************/
+
+
+.header-title, .header-subtitle {
+  color: #fff;
+}
+
+.header-subtitle {
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+.animate-pop-in {
+  animation: pop-in .6s ease-out forwards;
+}
+
+/* Animations */
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem) scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
