@@ -3,7 +3,7 @@
 <!-- HeadSection -->
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 breadcrumbf" style="line-height: 0 !important; margin-top: 15px">
+      <div class="col-lg-8 breadcrumbf">
         <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %> <span class="diviver">&gt;</span> <%= link_to @forum.title, category_forum_path(@category, @forum) %>
       </div>
     </div>
@@ -15,6 +15,7 @@
       <div class="col-lg-8">
         <h1><%= @forum.title %></h1>
         <p><%= @forum.posts.count %> Posts</p>
+        <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), category_path(@category), class: "btn btn-secondary" %>
         <%= link_to "Edit", edit_category_forum_path(@category, @forum), class:"btn btn-warning btn-sm" %>
         <%= link_to "Delete", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-sm" %>
       </div>
@@ -26,7 +27,7 @@
 <!-- POSTSection --> 
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col">
 
         <!-- POST -->
         <% @posts.each do |post| %>
@@ -57,7 +58,7 @@
               <a href="#" class="down"><i class="fa fa-thumbs-o-down"></i>1</a>
             </div>
 
-            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am by <%= link_to post.user_id%></div>
+            <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : 20 Nov @ 9:45am by <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
 
             <div class="pull-right">
               <span class="badge badge-success"><%= post.comments.count %> Commentaires</span> 
