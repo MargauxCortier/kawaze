@@ -1,14 +1,14 @@
 <section class="content">
 	<div class="container">
     <div class="row">
-      <div class="col-lg-8 breadcrumbf" style="line-height: 0 !important; margin-top: 15px">
+      <div class="col-lg-8 breadcrumbf">
         <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Categories", categories_path %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-8">
-        <%= link_to "New Category", new_category_path, class: "btn-sm btn-success" %>
+        <%= link_to "Créer une Catégorie", new_category_path, class: "btn-sm btn-success" %>
       </div>
     </div>
   </div>
@@ -31,9 +31,9 @@
 						<% end %>
 					</div>
 					<div class="postinfobot">
-						<%= link_to "Edit Category", edit_category_path(category), class: "btn-warning btn-sm" %>
-						<%= link_to "Delete Category", category_path(category), :confirm => "Are you sure you want to delete this category?", :method => :delete, class: "btn-danger btn-sm" %>
-						<%= link_to "New Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
+						<%= link_to "Editer la Categorie", edit_category_path(category), class: "btn-warning btn-sm" %>
+						<%= link_to "Supprimer la Categorie", category_path(category), :confirm => "Are you sure you want to delete this category?", :method => :delete, class: "btn-danger btn-sm" %>
+						<%= link_to "Créer un Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
 					</div>
 			</div>
 			<% end %>

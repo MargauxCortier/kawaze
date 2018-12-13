@@ -16,8 +16,8 @@
         <h1><%= @forum.title %></h1>
         <p><%= @forum.posts.count %> Posts</p>
         <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), category_path(@category), class: "btn btn-secondary" %>
-        <%= link_to "Edit", edit_category_forum_path(@category, @forum), class:"btn btn-warning btn-sm" %>
-        <%= link_to "Delete", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-sm" %>
+        <%= link_to "Editer le Forum", edit_category_forum_path(@category, @forum), class:"btn btn-warning btn-sm" %>
+        <%= link_to "Supprimer le Forum", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-sm" %>
       </div>
     </div>
   </div>
@@ -62,8 +62,8 @@
 
             <div class="pull-right">
               <span class="badge badge-success"><%= post.comments.count %> Commentaires</span> 
-              <%= link_to "Edit", edit_category_forum_post_path(@category, @forum, post), class:"btn-success btn-sm" %>
-              <%= link_to "Delete", category_forum_post_path(@category, @forum, post), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-danger btn-sm" %>                                      
+              <%= link_to "Editer", edit_category_forum_post_path(@category, @forum, post), class:"btn-success btn-sm" %>
+              <%= link_to "Supprimer", category_forum_post_path(@category, @forum, post), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-danger btn-sm" %>                                      
 
             </div>
 
@@ -91,7 +91,7 @@
           <div class="postinfobot">
 
             <div class="pull-right postreply">
-              <div class="pull-left"><%= submit_tag "Submit", class: "btn btn-primary" %></div>
+              <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
 
               <div class="clearfix"></div>
             </div>
@@ -135,7 +135,7 @@
           <div class="postinfobot">
 
             <div class="pull-right postreply">
-              <div class="pull-left"><%= submit_tag "Submit", class: "btn btn-primary" %></div>
+              <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
 
               <div class="clearfix"></div>
             </div>

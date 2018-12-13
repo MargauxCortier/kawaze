@@ -1,7 +1,34 @@
-<%= form_tag(@category, :method => :post) do  %>
-            
-	<%= label_tag :title %>
-	<%= text_field_tag :title, @category.title, class: 'form-control' %>
+<section class="content">
+	<div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Nouvelle Catégorie</h1>
+      </div>
+    </div>
+  </div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="post">
+					<%= form_tag(@category, :method => :post, class: 'form newtopic') do  %>
+					<div class="topwrap">
+						<div class="posttext pull-left">
+							<div style="padding-left: 94px ">
+								<%= text_field_tag :title, nil, placeholder: 'Titre de la Catégorie', class: 'form-control' %>
+							</div>
+						</div>
+					                             
+						<div class="pull-right">
+							<div class="pull-right"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
 
-	<%= submit_tag "Submit", class: "button is-primary" %>
-<% end %>
+							<div class="clearfix"></div>
+						</div>
+						<div class="clearfix"></div>
+						</div> 
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
