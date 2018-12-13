@@ -36,6 +36,7 @@
 /*-----------------------------------------------------------------*/
 /*--- General ---*/
 
+
 body {
     font-family: 'Open Sans Light', sans-serif;
     font-size: 14px;
@@ -64,6 +65,25 @@ pt-1{
 }
 
 /*-----------------------------------------------------------------*/
+/*--- CHAT ---*/
+
+.chat_content{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif; 
+    padding-left: 0%;
+    color: #30336b;
+    padding: 2px;    
+}
+
+.say_something {
+    padding: 10px;
+}
+
+.message{
+}
+
+
+/*-----------------------------------------------------------------*/
 /*--- HEADERNAV ---*/
 
 .text_logo{
@@ -85,8 +105,6 @@ pt-1{
 .button_sign{
     margin:10px;
 }
-
-
 
 
 /*-----------------------------------------------------------------*/

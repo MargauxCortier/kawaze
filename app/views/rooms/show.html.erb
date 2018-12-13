@@ -1,12 +1,25 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
-<h1>Chat room</h1>
 
-<div id="messages">
-  <%= render @messages %>
+<div class="content">
+	<!-- CHAT BOX -->
+	<div class="pre-scrollable">
+		<div id="messages">
+			<%= render @messages %>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 col-md-7" style="margin-top:2%">
+				<div class="post">
+					<div class="say_something">						
+						<form>
+							<input type="text" data-behavior="room_speaker" placeholder="Say something:" class="form-control">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- CHAT BOX -->
+	<div class="clearfix"></div>
 </div>
-
-<form>
-  <label>Say something:</label><br>
-  <input type="text" data-behavior="room_speaker">
-</form>
