@@ -31,8 +31,8 @@ Rails.application.configure do
    config.cache_store = :null_store
  end
 
-#config.action_cable.url = 'ws://localhost:3000/cable'
-#config.action_cable.allowed_request_origins = [ 'http://localhost:3000', 'http://127.0.0.1:3000' ]
+config.action_cable.url = 'wss://kawaze-development-mhm.herokuapp.com/cable'
+config.action_cable.allowed_request_origins = [ 'https://kawaze-development-mhm.herokuapp.com', 'http://kawaze-development-mhm.herokuapp.com' ] 
 
  # Store uploaded files on the local file system (see config/storage.yml for options)
  config.active_storage.service = :local
