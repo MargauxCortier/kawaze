@@ -1,5 +1,5 @@
 
-            <!-- Slider IMG BACKGROUND -->
+<!-- Slider IMG BACKGROUND -->
 <header>
   <section class="header-content">
     <div class="tp-banner-container">
@@ -7,31 +7,31 @@
             <div class="header-title animate-pop-in">
                 <div class="text_logo">
                     <div class="space">
-                    <%= image_tag('logo1blanc.png', size:"85") %>
+                        <%= image_tag('logo1blanc.png', size:"85") %>
                     </div>
                     <div class="space">
-                    <p>KAWAZE</p>  
+                        <p>KAWAZE</p>  
                     </div>                          
                 </div>  
             </div>
 
-        <% unless user_signed_in? %>
+            <% unless user_signed_in? %>
             
             <div class="header-subtitle animate-pop-in">
                 <div class="button_home_page">
                     <div class="button_sign">
-                    <%= link_to "Sign In", new_user_session_path, class:"btn btn-primary" %>
+                        <%= link_to "Sign In", new_user_session_path, class:"btn btn-primary" %>
                     </div>
 
                     <div class="button_sign">
-                    <%= link_to "Sign UP", new_user_registration_path, class:"btn btn-primary"  %>
+                        <%= link_to "Sign UP", new_user_registration_path, class:"btn btn-primary"  %>
                     </div>
                 </div>
             </div>
             <% end %>
         </div>
     </div>
-  </section>
+</section>
 </header>
 <!-- //Slider -->
 
