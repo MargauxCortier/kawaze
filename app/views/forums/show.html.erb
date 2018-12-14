@@ -216,16 +216,16 @@
             </div>
             <!-- SideBar -->
 
-            <div class="col-lg-3 col-md-3" id="myScrollspy">
+            <div class="col-lg-3 col-md-3">
 
                 <!-- -->
                 <div class="sidebarblock">
-                    <h3>Posts<span class="pull-right"> <a href="#createpost">Créer un post</a></span></h3>
+                    <h3>Posts</h3>
                     <div class="divline"></div>
                     <div class="blocktxt">
                         <ul class="nav nav-pills nav-stacked cats">
                             <% @posts.each do |post| %>
-                            <li><a href="#<%= post.id%>.post"><%= post.title%> <span class="badge pull-right"><%= post.comments.count %></span></a></li>
+                            <li><%= post.title%> <span class="badge pull-right"><%= post.comments.count %></span></li>
                             <% end %>
                         </ul>
                     </div>
