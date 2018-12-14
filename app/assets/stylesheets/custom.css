@@ -217,6 +217,9 @@ ul.socialicons li a:hover {
 .current_name{
     display: flex;
     align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
 }
 
 .headernav {
