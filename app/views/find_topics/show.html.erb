@@ -5,8 +5,16 @@ Resultats de votre recherche :
 <br>
 <br>
 
+<% if @forums.length == 0 %>
+<p> Il n'y a pas encore de forum traitant de cette question, créez-le !  </p>
+<a href="/categories"><button class="btn btn-primary">Choisissez une catégorie</button></a>
 
+
+<% else %>
 <% @forums.each do |forum| %>
 <a href="/categories/<%=forum.category_id%>/forums/<%=forum.id%>"> Allez voir si le forum <strong><%= forum.title %></strong> vous convient ... </a> <br>
 <% end %>
+<% end %>
+
+
 
