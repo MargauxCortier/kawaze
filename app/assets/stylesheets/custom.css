@@ -82,6 +82,21 @@ pt-1{
 .message{
 }
 
+/*-----------------------------------------------------------------*/
+/*--- ACCOUNT PROFIL ---*/
+
+.account-info-content {
+    background-color: #f8f8f8;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+.img_info_perso{
+    display: flex;
+    justify-content: space-around;
+}
 
 /*-----------------------------------------------------------------*/
 /*--- HEADERNAV ---*/
@@ -929,21 +944,15 @@ content {
 
 .first_row{
     display: flex;
-  justify-content: space-around; 
-  align-items: center;
-  margin:4%;
-  
-
-
+      justify-content: space-around; 
+      align-items: center;
+      margin:4%;
 }
+
 /*--- profile card ---*/
 
-
-
 .portfolio{
-    width: 730px;
-    text-align:center;
-
+    width: auto;
 }
 
 .heading{
@@ -968,8 +977,8 @@ content {
     text-align:center;
 }
 .bio-image img{
-    width: 273px;
-    height: 273px;
+    width: 173px;
+    height: 173px;
     border-radius:50%;
 }
 .bio-content{
