@@ -18,7 +18,7 @@
         <% if user_signed_in? %>
         <% if current_user.id == post.user_id || current_user.admin? %>
         <%= link_to 'Supprimer', category_forum_post_comment_path(@category, @forum, post, comment),
-        method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>  
+        method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Etes-vous sûr?' } %>  
         <% end %>
         <% end %>                                    
     </div>

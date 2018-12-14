@@ -36,7 +36,7 @@
 					<div class="postinfobot">
 						<% if current_user.admin? %>
 						<%= link_to "Editer la Categorie", edit_category_path(category), class: "btn-warning btn-sm" %>
-						<%= link_to "Supprimer la Categorie", category_path(category), :confirm => "Etes-vous sûr de vouloir supprimer cette catégorie?", :method => :delete, class: "btn-danger btn-sm" %>
+						<%= link_to "Supprimer la Categorie", category_path(category), data: { confirm: "Etes-vous sûr?" }, :method => :delete, class: "btn-danger btn-sm" %>
 						<%= link_to "Créer un Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
 						<% end %>
 					</div>	

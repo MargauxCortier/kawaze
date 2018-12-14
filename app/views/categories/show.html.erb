@@ -15,7 +15,7 @@
                 <% if user_signed_in? %>
                 <% if current_user.admin? %>
                 <%= link_to "Editer la Categorie", edit_category_path(@category), class: "btn-warning btn-sm" %>
-                <%= link_to "Supprimer la Categorie", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-danger btn-sm" %>
+                <%= link_to "Supprimer la Categorie", category_path(@category), method: :delete, data: { confirm: "Etes-vous sûr?" }, :method => :delete, class: "btn-danger btn-sm" %>
                 <% end %>
                 <%= link_to "Créer un nouveau Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
                 <% end %>
