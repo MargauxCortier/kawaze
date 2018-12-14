@@ -9,37 +9,38 @@
 
 <body>
 
-<div class="content" style="padding-bottom:5%">
+<div class="content">
 
-    <!-- POST -->
-    <div class="first_row">
-        <div class="portfolio">
+<!-- POST -->
+<div class="first_row">
+    <div class="portfolio">
 
 <!-- PROFIL --> 
 <div class="col-sm-8 account-info">
     <div id="personal-info" class="account-info-content">
-        <h4>Info personnel <span class="pull-right"></span></h4><hr>
             <% if current_user == @user %>
                 <div class="pull-right">
                 <a class="btn btn-primary btn-lg" href="/users/edit" role="button">Editer</a>
                 </div>
-            <% end %> 
+            <% end %>
+            <h4>Info personnel <span class="pull-right"></span></h4><hr> 
             
             <div class="row">
-
-                <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="img_info_perso">
+                <div class="col-xs-6 col-sm-4 col-lg-4">
                     <div class="bio-image">
                     <%= image_tag('fbkavatar.jpg') %>
                     </div> 
                 </div>
 
-                <div class="col-xs-6 col-sm-8 col-md-10">
+                <div class="col-xs-6 col-sm-8 col-lg-8">
                     <p><span><%= @user.name %></span></p>
                     <p>Ville:<%= @user.city %></p>
                     <% if current_user == @user %>
                     <p>Email: <span><%= current_user.email%></span></p>
                     <p>(visible seulement par moi)<p>
                     <% end %>
+                </div>
                 </div>
 
             </div><!-- / row -->

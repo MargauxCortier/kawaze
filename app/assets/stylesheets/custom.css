@@ -93,6 +93,11 @@ pt-1{
     padding: 30px;
 }
 
+.img_info_perso{
+    display: flex;
+    justify-content: space-around;
+}
+
 /*-----------------------------------------------------------------*/
 /*--- HEADERNAV ---*/
 
@@ -969,8 +974,8 @@ content {
     text-align:center;
 }
 .bio-image img{
-    width: 273px;
-    height: 273px;
+    width: 173px;
+    height: 173px;
     border-radius:50%;
 }
 .bio-content{
