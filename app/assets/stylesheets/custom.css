@@ -215,12 +215,8 @@ input:focus {
 /*--- Footer ---*/
 
 footer {
-    line-height: 63px;
+    line-height: 65px;
     color: #363838;
-}
-
-footer .logo {
-    line-height: normal;
 }
 
 
