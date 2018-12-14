@@ -44,7 +44,7 @@
               </div>
             </div>
             <div class="posttext pull-left">
-              <h2><%= post.title.capitalize %></h2>
+              <h2><%= link_to post.title.capitalize, category_forum_path(Forum.find(post.forum_id).category_id, post.forum_id) %></h2>
               <p><%= post.content %></p>
 
             </div>
