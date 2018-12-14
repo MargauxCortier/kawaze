@@ -215,12 +215,15 @@ ul.socialicons li a:hover {
 /*--- Header ---*/
 
 .current_name{
-    padding-top: 10%;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
 }
 
 .headernav {
     height: 70px;
-    border-bottom: 1px solid #c9cccd;
 }
 
 .img_logo {
