@@ -1,11 +1,45 @@
-<% content_for :page_title, "Edit Post" %>
-<%= form_tag(category_forum_post_path(@category, @forum, @post), :method => :put) do  %>
-            
-	<%= label_tag :title %>
-	<%= text_field_tag :title, @post.title, class: 'form-control' %>
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>Nouveau Forum</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="post">
+                    <%= form_tag(category_forum_post_path(@category, @forum, @post), :method => :put, class: 'form newtopic') do  %>
+                    <div class="topwrap">
+                        <div class="userinfo pull-left">
+                        </div>
+                        <div class="posttext pull-left">
+                            <h2>Nouveau Post</h2>
+                            <div>
+                                <%= text_field_tag :title, @post.title, placeholder: 'Titre de votre Post', class: 'form-control' %>
+                            </div>
 
-	<%= label_tag :content %>
-	<%= text_field_tag :content, @post.content,class: 'form-control' %>
+                            <div>
+                                <%= text_area_tag :content, @post.content, placeholder: 'Description', id: 'desc', class: 'form-control' %>
+                            </div>
+                        </div>
+                    </div>                              
+                    <div class="postinfobot">
 
-	<%= submit_tag "Submit", class: "button is-primary" %>
-<% end %>
+                        <div class="pull-right postreply">
+                            <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
+
+                            <div class="clearfix"></div>
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <% end %>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
