@@ -1,7 +1,12 @@
-<h1>FindTopics#show</h1>
-<p>Find me in app/views/find_topics/show.html.erb</p>
 
-<%= @forums.each do |forum| %>
-<%= forum.title %>
+Resultats de votre recherche : 
+
+
+<br>
+<br>
+
+
+<% @forums.each do |forum| %>
+<a href="/categories/<%=forum.category_id%>/forums/<%=forum.id%>"> Allez voir si le forum <strong><%= forum.title %></strong> vous convient ... </a> <br>
 <% end %>
 
