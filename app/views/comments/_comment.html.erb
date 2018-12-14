@@ -1,8 +1,8 @@
 <% comments.each do |comment|%> 
-  <div class="topwrap" style="border-top: solid 1px #f1f1f1">
+<div class="topwrap" style="border-top: solid 1px #f1f1f1">
     <div class="userinfo pull-left">
         <div class="avatar">
-        		<%= image_tag('avatar.jpg') %>
+            <%= image_tag('avatar.jpg') %>
             <div class="status green">&nbsp;</div>
         </div>
     </div>
@@ -10,20 +10,20 @@
         <p><%= comment.content %></p>
     </div>
     <div class="clearfix"></div>
-	</div>
-	<div class="postinfobot">
-		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= comment.created_at.strftime("%d %b a %H:%M")%> par <%= link_to User.find(comment.user_id).name, "/users/"+comment.user_id.to_s %> </div>
+</div>
+<div class="postinfobot">
+    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= comment.created_at.strftime("%d %b a %H:%M")%> par <%= link_to User.find(comment.user_id).name, "/users/"+comment.user_id.to_s %> </div>
 
-      <div class="pull-right">  
+    <div class="pull-right">  
         <% if user_signed_in? %>
-              <% if current_user.id == post.user_id || current_user.admin? %>
+        <% if current_user.id == post.user_id || current_user.admin? %>
         <%= link_to 'Supprimer', category_forum_post_comment_path(@category, @forum, post, comment),
-              method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>  
-              <% end %>
-              <% end %>                                    
-      </div>
+        method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>  
+        <% end %>
+        <% end %>                                    
+    </div>
 
-      <div class="clearfix"></div>
-  </div>
-  
+    <div class="clearfix"></div>
+</div>
+
 <% end %>
