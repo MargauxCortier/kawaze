@@ -949,7 +949,7 @@ content {
 /*--- profile card ---*/
 
 .portfolio{
-    width: auto;
+    width: 100%;
 }
 
 .heading{
