@@ -5,22 +5,23 @@
         <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Catégories", categories_path %>
       </div>
     </div>
-
+<% if user_signed_in? %>
+<% if current_user.admin? %>
     <div class="row">
       <div class="col-lg-8">
         <%= link_to "Créer une Catégorie", new_category_path, class: "btn-sm btn-success" %>
       </div>
     </div>
   </div>
-
-
+<% end %>
+<% end %>
 </br>
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-lg-6">
 			<% @categories.each do |category| %>
 			<div class="post">
-					<div style="padding: 10px 94px 0px 94px ">
+					<div style="padding: 10px 94px 10px 94px ">
 						<h2><%= link_to category.title, category_path(category) %></h2>
 						<% if category.forums.size > 0 %>
 						<p>Il y a <%= category.forums.size %> forum dans cette catégorie.</p>
@@ -30,11 +31,15 @@
 						<p>Il n'y a actuellement aucun forum dans cette catégorie.</p>
 						<% end %>
 					</div>
+					<% if user_signed_in? %>
+					<% if current_user.admin? %>
 					<div class="postinfobot">
 						<%= link_to "Editer la Categorie", edit_category_path(category), class: "btn-warning btn-sm" %>
 						<%= link_to "Supprimer la Categorie", category_path(category), :confirm => "Etes-vous sûr de vouloir supprimer cette catégorie?", :method => :delete, class: "btn-danger btn-sm" %>
 						<%= link_to "Créer un Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
 					</div>
+					<% end %>
+					<% end %>
 			</div>
 			<% end %>
 		</div>
