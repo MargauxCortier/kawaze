@@ -9,7 +9,7 @@
                 </a>
             </div> 
 
-            <div class="col-lg-4 col-xs-9 col-sm-5 col-md-4 avt">
+            <div class="col-lg-3 col-xs-9 col-sm-5 col-md-4 avt">
                 <div class="stnt pull-left">                            
                     <form class="form">
                         <a href="/find"><button class="btn btn-primary">Trouver des utilisateurs</button></a>
@@ -17,27 +17,20 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
-                <div class="wrap">
-
-                    <%= search_form_for(@search, url: "/findtopics", method: :get) do |f| %>
-                    <div class="pull-left txt">
-                        <%= f.search_field :title_cont, autofocus: true, :placeholder=>"Rechercher un forum par mots clés", :class=>"form-control" %></div>
-
-                        <div class="pull-right"><%= f.submit "Rechercher", :id=>"fa fa-search", :class=>"btn btn-default" %>    </div>
-
-                        <div class="clearfix"></div>
-                        <% end %>
-
-                    </div>
-                </div>
-
-
+                <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
+                            <div class="wrap">
+                                <%= search_form_for(@search, url: "/findtopics", method: :get) do |f| %>
+                                    <div class="pull-left txt"><%= f.search_field :title_cont, autofocus: true, :placeholder=>"Rechercher un forum par mots clés", :class=>"form-control" %></div>
+                                    <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+                                    <div class="clearfix"></div>
+                                <% end %>
+                            </div>
+                        </div>
 
 
                 <% if user_signed_in? %>
 
-                <div class="col-lg-3 col-xs-3 avt">
+                <div class="col-lg-2 col-xs-2 avt">
 
                   <div class="avatar pull-left dropdown">
                     <a data-toggle="dropdown" href="/" style="text-decoration:none">
@@ -54,7 +47,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-1 hidden-xs hidden-sm avt">
+            <div class="col-lg-2 hidden-xs hidden-sm avt">
               <div class="current_name">
                 <%= current_user.name %>
             </div>
