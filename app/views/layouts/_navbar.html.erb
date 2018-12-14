@@ -21,7 +21,7 @@
                             <div class="wrap">
                                 <%= search_form_for(@search, url: "/findtopics", method: :get) do |f| %>
                                     <div class="pull-left txt"><%= f.search_field :title_cont, autofocus: true, :placeholder=>"Rechercher un forum par mots clés", :class=>"form-control" %></div>
-                                    <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+                                    <div class="pull-right"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></div>
                                     <div class="clearfix"></div>
                                 <% end %>
                             </div>
