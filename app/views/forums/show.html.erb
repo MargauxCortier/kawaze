@@ -16,8 +16,12 @@
         <h1><%= @forum.title %></h1>
         <p><%= @forum.posts.count %> Posts</p>
         <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), category_path(@category), class: "btn btn-secondary" %>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
         <%= link_to "Editer le Forum", edit_category_forum_path(@category, @forum), class:"btn btn-warning btn-sm" %>
         <%= link_to "Supprimer le Forum", category_forum_path(@category, @forum), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-sm" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -26,7 +30,7 @@
 <br>
 <!-- POSTsSection --> 
   <div class="container">
-    <div class="row">
+    <div class="row first_row" > <!-- ICI -->
       <div class="col">
 
         <!-- PostSection -->
@@ -37,10 +41,6 @@
               <div class="avatar">
                 <%= image_tag('avatar.jpg') %>
                 <div class="status green">&nbsp;</div>
-              </div>
-
-              <div class="icons">
-                <%= image_tag('icon3.jpg') %><%= image_tag('icon4.jpg') %><%= image_tag('icon5.jpg') %>
               </div>
             </div>
             <div class="posttext pull-left">
@@ -61,20 +61,26 @@
             <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= post.created_at.strftime("%d %b a %H:%M")%> par <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
 
             <div class="pull-right">
-              <span class="badge badge-success"><%= post.comments.count %> Commentaires</span> 
+              <button type="button" class="badge badge-success" data-toggle="collapse" data-target="#<%= post.id %>" style="outline: none"><%= post.comments.count %> Commentaires</button>
+              <% if user_signed_in? %>
+              <% if current_user.id == post.user_id || current_user.admin? %>
               <%= link_to "Editer", edit_category_forum_post_path(@category, @forum, post), class:"btn-success btn-sm" %>
               <%= link_to "Supprimer", category_forum_post_path(@category, @forum, post), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-danger btn-sm" %>                                      
-
+              <% end %>
+              <% end %>
             </div>
 
             <div class="clearfix"></div>
           </div>
         <!-- /PostSection -->
       <!-- CommentSection -->
+          <div id="<%= post.id %>" class="collapse">
           <%= render 'comments/comment', post: post, comments: post.comments %>
-
+          
         <!-- CommentForm -->
-          <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
+        <% if user_signed_in? %>
+
+        <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
           <div class="topwrap">
             <div class="userinfo pull-left">
               <div class="avatar">
@@ -101,6 +107,38 @@
             <div class="clearfix"></div>
           </div>
           <% end %>
+          
+          <% else %>
+
+          <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
+          <div class="topwrap">
+            <div class="userinfo pull-left">
+              <div class="avatar">
+                <%= image_tag('avatar.jpg') %>
+                <div class="status red">&nbsp;</div>
+              </div>
+            </div>
+            <div class="posttext pull-left">
+
+              <div>
+                <%= text_field_tag :content, nil, placeholder: 'Commentaire', class: 'form-control', :disabled => true %>
+              </div>
+            </div>
+          </div>                              
+          <div class="postinfobot">
+
+            <div class="pull-right postreply">
+              <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+
+              <div class="clearfix"></div>
+            </div>
+
+
+            <div class="clearfix"></div>
+          </div>
+          <% end %>
+          <% end %>
+          </div>
         <!-- /CommentForm -->
         <!-- /CommentSection -->
         </div>
@@ -109,6 +147,7 @@
 
 
         <!-- PostForm -->
+        <% if user_signed_in? %>
         <div class="post">
           <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
           <div class="topwrap">
@@ -116,10 +155,6 @@
               <div class="avatar">
                 <%= image_tag('avatar.jpg') %>
                 <div class="status red">&nbsp;</div>
-              </div>
-
-              <div class="icons">
-                <%= image_tag('icon3.jpg') %><%= image_tag('icon4.jpg') %><%= image_tag('icon5.jpg') %><%= image_tag('icon6.jpg') %>
               </div>
             </div>
             <div class="posttext pull-left">
@@ -146,8 +181,42 @@
           </div>
           <% end %>
         </div>
+
+        <% else %>
+
+        <div class="post">
+          <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
+          <div class="topwrap">
+            <div class="userinfo pull-left">
+            </div>
+            <div class="posttext pull-left">
+              <h2>Nouveau Post</h2>
+              <div>
+                <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control', :disabled => true %>
+              </div>
+
+              <div>
+                <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control', :disabled => true %>
+              </div>
+            </div>
+          </div>                              
+          <div class="postinfobot">
+
+            <div class="pull-right postreply">
+              <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+
+              <div class="clearfix"></div>
+            </div>
+
+
+            <div class="clearfix"></div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
         <!-- /PostForm -->
       </div>
     </div>
+
   </div>
 </section>

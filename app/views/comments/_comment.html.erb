@@ -15,8 +15,12 @@
 		<div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= comment.created_at.strftime("%d %b a %H:%M")%> par <%= link_to User.find(comment.user_id).name, "/users/"+comment.user_id.to_s %> </div>
 
       <div class="pull-right">  
+        <% if user_signed_in? %>
+              <% if current_user.id == post.user_id || current_user.admin? %>
         <%= link_to 'Supprimer', category_forum_post_comment_path(@category, @forum, post, comment),
-              method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>                                      
+              method: :delete, class: "btn-danger btn-sm", data: { confirm: 'Are you sure?' } %>  
+              <% end %>
+              <% end %>                                    
       </div>
 
       <div class="clearfix"></div>
