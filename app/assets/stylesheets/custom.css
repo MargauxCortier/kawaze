@@ -123,8 +123,25 @@ pt-1{
 
 
 /*-----------------------------------------------------------------*/
-/*--- INDEX ---*/
+/*--- FIND USER PAGE ---*/
 
+.pres{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;    
+    text-align: center;
+    color: #30336b;
+    padding: 20px;
+}
+
+.search_user{
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-around;
+
+}
+
+/*-----------------------------------------------------------------*/
+/*--- INDEX ---*/
 
 .call_to_action{
     font-family: 'Roboto Mono', monospace;
@@ -198,7 +215,7 @@ input:focus {
 /*--- Footer ---*/
 
 footer {
-    height: 3px;
+    height: 76px;
     line-height: 69px;
     color: #363838;
 }

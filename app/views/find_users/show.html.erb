@@ -1,28 +1,77 @@
-<h1>Trouvez des membres qui vivent la même experience que vous, dans votre ville ou ailleurs </h1>
-<br>
-<br>
 
+<div class="content">
+	<div class="container">
+		<div class="row">
+			
+		<!-- EXPLICATION DIV -->
+			<div class="col-lg-6 col-md-6" style="margin-top:1%">
+				<div class="post" style="height:120px;">
+					<div class="pres">
+						<strong style="font-size:20px">Trouvez des membres qui vivent la même experience que vous, dans votre ville ou ailleurs </strong>
+					</div>
+					<div class="clearfix"></div>
+				</div>  
+			</div>
+		<!-- / EXPLICATION DIV -->
 
+		<!-- SEARCH DIV -->
+			<div class="col-lg-6 col-md-6" style="margin-top:1%">
+				<div class="post" style="padding-bottom: 18px">
 
-<%= search_form_for(@q, url: "/find", method: :get) do |f| %>
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-xs-12 ">
+							<div class="pres">
+								<strong style="font-size:20px">Trouvez des membres par : </strong>
+							</div>
+						</div>
+					</div>
 
-  <%= f.label :Trouver_des_membres_dont_la_maladie_contient_les_mots %>
-  <%= f.search_field :illness_cont %>
+					<div class="search_user">
+						<div class="row">
+							<%= search_form_for(@q, url: "/find", method: :get, class: 'form newtopic') do |f| %>
+									<div class="col-lg-9 col-md-9 col-xs-12">
+										<div class="input-group">
+									<%= f.search_field :illness_cont, :placeholder=>"mot-clef maladie", class: 'form-control' %>
+									<span class="input-group-addon">et/ou</span>
+									<%= f.search_field :city_cont, :placeholder=>"ville", class: 'form-control' %>
+									</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-xs-12">
+										<%= f.submit "GO", :class=>"btn btn-primary" %>
+									</div>
+								
+							</div>
+							<% end %>
+						</div>
+					</div>
+				<div class="clearfix"></div>
+			</div>
+		<!-- / SEARCH DIV -->
 
-  <%= f.label :Et_dont_la_ville_est %>
-  <%= f.search_field :city_cont %>
+		<!-- USER LIST -->
 
+			<div class="col-lg-12 col-md-12" style="margin-top:1%">
+				<div class="post">
+					<div class="pres">	
+						<br>
+						<p>Voici les membres dont le profil correspond à votre recherche, contactez-les ! </p>
+						<br>
+					</div>
+				</div>
+			</div>
 
-  <%= f.submit %>
-<% end %>
+			<div class="col-lg-12 col-md-12" style="margin-top:1%">
+				<div class="post">
+					<div class="pres">
+						<% @people.each do |user|  %>
+						<a href="/users/<%=user.id%>"> Profil de <strong><%= user.name%></strong></a> <br>
+						<% end %>
+					</div>
+				</div>
+			</div>
 
-<br>
-<p>Voici les membres dont le profil correspond à votre recherche, contactez-les ! </p>
-<br>
+		<!-- USER LIST -->
 
-
-<% @people.each do |user|  %>
-<a href="/users/<%=user.id%>"> Profil de <strong><%= user.name%></strong></a> <br>
-<% end %>
-
-
+		</div>
+	</div>
+</div>
