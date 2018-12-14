@@ -1,22 +1,25 @@
 <section class="content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 breadcrumbf">
-                <%= link_to "Home", root_path %> <span class="diviver">&gt;</span> <%= link_to "Catégories", categories_path %> <span class="diviver">&gt;</span> <%= link_to @category.title, category_path(@category) %>
-            </div>
+            <ol class="breadcrumb">
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Categories", categories_path %></li>
+                <li class="active"><%= @category.title %></li>
+            </ol>
         </div>
         <div class="row">
             <div class="col-lg-8">
                 <h2><%= @category.title %></h2>
-                
+
                 <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), categories_path, class: "btn btn-secondary" %>
                 <% if user_signed_in? %>
-                    <% if current_user.admin? %>
+                <% if current_user.admin? %>
                 <%= link_to "Editer la Categorie", edit_category_path(@category), class: "btn-warning btn-sm" %>
                 <%= link_to "Supprimer la Categorie", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-danger btn-sm" %>
-                    <% end %>
                 <% end %>
                 <%= link_to "Créer un nouveau Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
+                <% end %>
+
                 <button class="btn-warning btn-sm" data-toggle="modal" data-target="#howto">Comment ça marche ?</button>
             </div>
         </div>
@@ -52,18 +55,18 @@
 
 <!-- Modal -->
 <div class="modal fade" id="howto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Comment ça marche ?</h4>
-      </div>
-      <div class="modal-body">
-        <p>Ici on va expliquer ce que représente un forum de discussion pour nous.</p>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Comment ça marche ?</h4>
+            </div>
+            <div class="modal-body">
+                <p>Ici on va expliquer ce que représente un forum de discussion pour nous.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
