@@ -215,12 +215,12 @@ ul.socialicons li a:hover {
 /*--- Header ---*/
 
 .current_name{
-    padding-top: 10%;
+    display: flex;
+    align-items: center;
 }
 
 .headernav {
     height: 70px;
-    border-bottom: 1px solid #c9cccd;
 }
 
 .img_logo {

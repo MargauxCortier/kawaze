@@ -1,63 +1,76 @@
 <div class="headernav" <%= current_page?("/")? '' : 'headernav-style-two'  %>">
     <div class="container">
         <div class="row">
-            <div class="col-lg-1 col-xs-3 col-sm-2 col-md-2 logo ">
+            <div class="col-lg-1 hidden-xs hidden-sm col-md-2 logo ">
                 <a href="/">
-                    <div class="img_logo" style="padding-top:10%">
+                    <div class="img_logo" style="padding:10%">
                         <%= image_tag('logo1.png', size:"45") %>
                     </div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-xs-5 col-sm-5 col-md-3 selecttopic">
-                <div class="dropdown">
-                    <a data-toggle="dropdown" href="" >Borderlands 2</a> 
-                    <b class="caret"></b>
-                    <ul class="dropdown-menu" role="menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="">  Borderlands 1</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-2" href="">Borderlands 2</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-3" href="">Borderlands 3</a></li>
-                    </ul>
+
+            <div class="col-lg-4 col-xs-9 col-sm-5 col-md-4 avt">
+                <div class="stnt pull-left">                            
+                    <form action="03_new_topic.html" method="post" class="form">
+                        <a href="/find"><button class="btn btn-primary">Contacter des utilisateurs</button></a>
+                    </form>
                 </div>
             </div>
 
             <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
-                    <div class="wrap">
-                        <form action="/" method="post" class="form">
-                            <div class="pull-left txt"><input type="text" class="form-control" placeholder="Recheche par ville ou maladie"></div>
-                            <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
+                <div class="wrap">
+                    <form action="/" method="post" class="form">
+                        <div class="pull-left txt"><input type="text" class="form-control" placeholder="Recheche par Topic"></div>
+                        <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
             </div>
 
             <% if user_signed_in? %>
 
-            <div class="col-lg-1 col-xs-3 avt">
+            <div class="col-lg-3 col-xs-3 avt">
                   
-                      <div class="avatar pull-left dropdown">
-                          <a data-toggle="dropdown" href="#" style="text-decoration:none">
-                                <%= image_tag('avatar.jpg') %>
-
-                          </a> 
-                          <b class="caret"></b>
-                          <div class="status green">&nbsp;</div>
-                          <ul class="dropdown-menu" role="menu">
-                              <li role="presentation"><a href="/">Home</a></li>
-                              <li role="presentation"><a href="/users/<%= current_user.id %>">My Profile</a></li>
-                              <li role="presentation"><a href="/users/edit">Edit my Profile</a></li>
-                              <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-                          </ul>
-                      </div>
-                    <div class="clearfix"></div>
-            </div>
+                <div class="avatar pull-left dropdown">
+                  <a data-toggle="dropdown" href="/" style="text-decoration:none">
+                    <%= image_tag('avatar.jpg') %>
+                    <b class="caret"></b>
+                  </a>
                   
-                    <div class="col-lg-1 hidden-xs hidden-sm avt">
-                      <div class="current_name">
+                  <div class="status green">&nbsp;</div>
+                    <ul class="dropdown-menu" role="menu">
+                      <li role="presentation"><a href="/">Home</a></li>
+                      <li role="presentation"><a href="/users/<%= current_user.id %>">My Profile</a></li>
+                      <li role="presentation"><a href="/users/edit">Edit my Profile</a></li>
+                      <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                    </ul>
+                  <div class="clearfix"></div>
+              </div>
+              
+              <div class="col-lg-1 hidden-xs hidden-sm avt">
+                  <a data-toggle="dropdown" href="/" style="text-decoration:none">
+                    <div class="current_name">
                       <%= current_user.name %>
-                      </div>
                     </div>
+                  </a>
 
-            <% end %>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation">
+                      <a href="/">Home</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="/users/<%= current_user.id %>">My Profile</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="/users/edit">Edit my Profile</a>
+                    </li>
+                    <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+                    </li>
+                  </ul>
+                <div class="clearfix"></div>
+              </div>
+          
+        <% end %>
 
         </div>
     </div>
