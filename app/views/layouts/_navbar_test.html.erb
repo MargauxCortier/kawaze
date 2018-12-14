@@ -19,44 +19,52 @@
 
             <div class="col-lg-4 search hidden-xs hidden-sm col-md-3">
                 <div class="wrap">
-                    <form action="/" method="post" class="form">
-                        <div class="pull-left txt"><input type="text" class="form-control" placeholder="Recheche par Topic"></div>
-                        <div class="pull-right"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></div>
+
+                    <%= search_form_for(@search, url: "/findtopics", method: :get) do |f| %>
+                    <div class="pull-left txt">
+                        <%= f.search_field :title_cont, autofocus: true, :placeholder=>"Rechercher un forum par mots clés", :class=>"form-control" %></div>
+
+                        <div class="pull-right"><%= f.submit "Rechercher", :id=>"fa fa-search", :class=>"btn btn-default" %>    </div>
+
                         <div class="clearfix"></div>
-                    </form>
+                        <% end %>
+
+                    </div>
                 </div>
-            </div>
 
-            <% if user_signed_in? %>
 
-            <div class="col-lg-3 col-xs-3 avt">
-                  
-              <div class="avatar pull-left dropdown">
-                <a data-toggle="dropdown" href="/" style="text-decoration:none">
-                  <%= image_tag('avatar.jpg') %>
-                  <b class="caret"></b>
-                </a>
-                
-                <div class="status green">&nbsp;</div>
+
+
+                <% if user_signed_in? %>
+
+                <div class="col-lg-3 col-xs-3 avt">
+
+                  <div class="avatar pull-left dropdown">
+                    <a data-toggle="dropdown" href="/" style="text-decoration:none">
+                      <%= image_tag('avatar.jpg') %>
+                      <b class="caret"></b>
+                  </a>
+
+                  <div class="status green">&nbsp;</div>
                   <ul class="dropdown-menu" role="menu">
                     <li role="presentation"><a href="/">Home</a></li>
                     <li role="presentation"><a href="/users/<%= current_user.id %>">My Profile</a></li>
                     <li role="presentation"><a href="/users/edit">Edit my Profile</a></li>
                     <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-                  </ul>
-                </div>
-
-                <div class="col-lg-1 hidden-xs hidden-sm avt">
-                      <div class="current_name">
-                        <%= current_user.name %>
-                      </div>
-                    <div class="clearfix"></div>
-                </div>
+                </ul>
             </div>
-        
-        <% end %>
 
+            <div class="col-lg-1 hidden-xs hidden-sm avt">
+              <div class="current_name">
+                <%= current_user.name %>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
+
+    <% end %>
+
+</div>
+</div>
 </div>
 

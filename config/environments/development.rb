@@ -31,8 +31,8 @@ Rails.application.configure do
    config.cache_store = :null_store
  end
 
-config.action_cable.url = 'wss://kawaze-development-mhm.herokuapp.com/cable'
-config.action_cable.allowed_request_origins = [ 'https://kawaze-development-mhm.herokuapp.com', 'http://kawaze-development-mhm.herokuapp.com' ] 
+#config.action_cable.url = 'wss://kawaze-development-mhm.herokuapp.com/cable'
+#config.action_cable.allowed_request_origins = [ 'https://kawaze-development-mhm.herokuapp.com', 'http://kawaze-development-mhm.herokuapp.com' ] 
 
  # Store uploaded files on the local file system (see config/storage.yml for options)
  config.active_storage.service = :local
@@ -47,7 +47,7 @@ config.action_cable.allowed_request_origins = [ 'https://kawaze-development-mhm.
 
  # Raise an error on page load if there are pending migrations.
  config.active_record.migration_error = :page_load
-
+###################################################################################################################################################################################
  # Highlight code that triggered database queries in logs.
  config.active_record.verbose_query_logs = true
 

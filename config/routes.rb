@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	
+  get 'find_topics/show'
   # get 'home/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   
   get '/find', to: 'find_users#show'
   post '/find', to: 'find_users#find'
+  get '/findtopics', to: 'find_topics#show'
  
   get '/new_account', to: 'home#new_account_04'
 
