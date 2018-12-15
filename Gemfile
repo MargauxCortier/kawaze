@@ -11,6 +11,8 @@ gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-rails'
 gem 'better_errors', '~> 2.4'
 gem 'ransack'
+gem 'pusher'
+gem 'figaro'
 
 # gem 'bulma-rails', '~> 0.7.2'
 # gem 'simple_form'

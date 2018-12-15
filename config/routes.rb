@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-	
-  get 'find_topics/show'
-  # get 'home/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
-
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { registrations: 'users/registrations', 
+                                    sessions: 'sessions' 
+                                  }
+  get 'find_topics/show'
 
   root 'home#index'
   get '/users/:id', to: 'profile#show'
@@ -26,9 +24,6 @@ Rails.application.routes.draw do
   		end
   	end
   end
-
-  
-
   
 end
 
