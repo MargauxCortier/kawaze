@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    
     <title>Kawaze</title>
-    <%= csrf_meta_tags %>
-  
-    <%= action_cable_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %> 
     <%= csp_meta_tag %>
+
+    <%= action_cable_meta_tag %>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <%= favicon_link_tag asset_path('logo1.png') %>
+    <%= favicon_link_tag asset_path('logo1.png') %>
   
-
-
   </head>
 
   <body>
