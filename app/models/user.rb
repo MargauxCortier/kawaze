@@ -16,6 +16,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :notify_pusher
 
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    ContactMailer.welcome_email(self).deliver_later
+  end
+
   def notify_pusher
     Pusher.trigger('activity', 'login', self.as_json)
   end
