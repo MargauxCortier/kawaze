@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <ol class="breadcrumb">
-                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Accueil", root_path %></li>
                 <li><%= link_to "Categories", categories_path %></li>
                 <li class="active"><%= @category.title %></li>
             </ol>
@@ -11,7 +11,7 @@
             <div class="col-lg-8">
                 <h2><%= @category.title %></h2>
 
-                <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), categories_path, class: "btn btn-secondary" %>
+                <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Retour"), categories_path, class: "btn btn-secondary" %>
                 <% if user_signed_in? %>
                 <% if current_user.admin? %>
                 <%= link_to "Editer la Categorie", edit_category_path(@category), class: "btn-warning btn-sm" %>
