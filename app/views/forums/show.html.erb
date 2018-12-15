@@ -120,149 +120,149 @@
 
                     <% else %>
                     <div id="outer-box">
-                    <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
-                    <div class="topwrap">
-                        <div class="userinfo pull-left">
-                        </div>
-                        <div class="posttext pull-left">
-
-                            <div>
-                                <%= text_field_tag :content, nil, placeholder: 'Commenter', class: 'form-control', :disabled => true %>
+                        <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
+                        <div class="topwrap">
+                            <div class="userinfo pull-left">
                             </div>
-                        </div>
-                    </div>                              
-                    <div class="postinfobot">
+                            <div class="posttext pull-left">
 
-                        <div class="pull-right postreply">
-                            <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+                                <div>
+                                    <%= text_field_tag :content, nil, placeholder: 'Commenter', class: 'form-control', :disabled => true %>
+                                </div>
+                            </div>
+                        </div>                              
+                        <div class="postinfobot">
+
+                            <div class="pull-right postreply">
+                                <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+
+                                <div class="clearfix"></div>
+                            </div>
+
 
                             <div class="clearfix"></div>
                         </div>
-
-
-                        <div class="clearfix"></div>
-                    </div>
-                    <% end %>
-                    <div id="inner-box">
-                        <div class="clearfix">
-                    <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
-                  <p>
-                    <%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
-                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %></p>
-                    </div>
-                </div>
-            </div>
-                    <% end %>
-
-                    <!-- /CommentForm -->
-                    <!-- /CommentSection -->
-                </div>
-                <% end %>
-                <!-- /POSTsSection -->
-
-
-                <!-- PostForm -->
-                <% if user_signed_in? %>
-                <div class="post">
-                    <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
-                    <div class="topwrap" id="createpost">
-                        <div class="userinfo pull-left">
-                            <div class="avatar">
-                                <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
-                                <% if User.find(post.user_id).is_signed_in? %>
-                                <div class="status green">&nbsp;</div>
-                                <% else %>
-                                <div class="status red">&nbsp;</div>
-                                <% end %>
+                        <% end %>
+                        <div id="inner-box">
+                            <div class="clearfix">
+                                <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
+                                <p>
+                                    <%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
+                                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %></p>
+                                </div>
                             </div>
                         </div>
-                        <div class="posttext pull-left">
-                            <h2>Nouveau Post</h2>
-                            <div>
-                                <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control' %>
+                        <% end %>
+
+                        <!-- /CommentForm -->
+                        <!-- /CommentSection -->
+                    </div>
+                    <% end %>
+                    <!-- /POSTsSection -->
+
+
+                    <!-- PostForm -->
+                    <% if user_signed_in? %>
+                    <div class="post">
+                        <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
+                        <div class="topwrap" id="createpost">
+                            <div class="userinfo pull-left">
+                                <div class="avatar">
+                                    <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
+                                    <% if User.find(post.user_id).is_signed_in? %>
+                                    <div class="status green">&nbsp;</div>
+                                    <% else %>
+                                    <div class="status red">&nbsp;</div>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <div class="posttext pull-left">
+                                <h2>Nouveau Post</h2>
+                                <div>
+                                    <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control' %>
+                                </div>
+
+                                <div>
+                                    <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control' %>
+                                </div>
+                            </div>
+                        </div>                              
+                        <div class="postinfobot">
+
+                            <div class="pull-right postreply">
+                                <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
+
+                                <div class="clearfix"></div>
                             </div>
 
-                            <div>
-                                <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control' %>
-                            </div>
-                        </div>
-                    </div>                              
-                    <div class="postinfobot">
-
-                        <div class="pull-right postreply">
-                            <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
 
                             <div class="clearfix"></div>
                         </div>
-
-
-                        <div class="clearfix"></div>
+                        <% end %>
                     </div>
-                    <% end %>
-                </div>
 
-                <% else %>
-                <div id="outer-box">
-                <div class="post">
-                    <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
-                    <div class="topwrap"  id="createpost">
-                        <div class="userinfo pull-left">
-                        </div>
-                        <div class="posttext pull-left">
-                            <h2>Nouveau Post</h2>
-                            <div>
-                                <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control', :disabled => true %>
+                    <% else %>
+                    <div id="outer-box">
+                        <div class="post">
+                            <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
+                            <div class="topwrap"  id="createpost">
+                                <div class="userinfo pull-left">
+                                </div>
+                                <div class="posttext pull-left">
+                                    <h2>Nouveau Post</h2>
+                                    <div>
+                                        <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control', :disabled => true %>
+                                    </div>
+
+                                    <div>
+                                        <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control', :disabled => true %>
+                                    </div>
+                                </div>
+                            </div>                              
+                            <div class="postinfobot">
+
+                                <div class="pull-right postreply">
+                                    <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+
+                                <div class="clearfix"></div>
                             </div>
-
-                            <div>
-                                <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control', :disabled => true %>
-                            </div>
-                        </div>
-                    </div>                              
-                    <div class="postinfobot">
-
-                        <div class="pull-right postreply">
-                            <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
-
-                            <div class="clearfix"></div>
-                        </div>
-
-
-                        <div class="clearfix"></div>
-                    </div>
-                    <% end %>
-                </div>
-                <div id="inner-box">
-                    <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
-                  <p>
-                    <%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
-                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %></p>
-                </div>
-            </div>
-
-                <% end %>
-                <!-- /PostForm -->
-            </div>
-            <!-- SideBar -->
-
-            <div class="col-lg-3 col-md-3">
-
-                <!-- -->
-                <div class="sidebarblock">
-                    <h3>Posts</h3>
-                    <div class="divline"></div>
-                    <div class="blocktxt">
-                        <ul class="nav nav-pills nav-stacked cats">
-                            <% @posts.each do |post| %>
-                            <li><%= post.title%> <span class="badge pull-right"><%= post.comments.count %></span></li>
                             <% end %>
-                        </ul>
+                        </div>
+                        <div id="inner-box">
+                            <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
+                            <p><%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
+                                <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %>
+                            </p>
+                            </div>
+                        </div>
+
+                        <% end %>
+                        <!-- /PostForm -->
                     </div>
+                    <!-- SideBar -->
+
+                    <div class="col-lg-3 col-md-3">
+
+                        <!-- -->
+                        <div class="sidebarblock">
+                            <h3>Posts</h3>
+                            <div class="divline"></div>
+                            <div class="blocktxt">
+                                <ul class="nav nav-pills nav-stacked cats">
+                                    <% @posts.each do |post| %>
+                                    <li><%= post.title%> <span class="badge pull-right"><%= post.comments.count %></span></li>
+                                    <% end %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /SideBar -->
                 </div>
+
             </div>
-
-            <!-- /SideBar -->
-        </div>
-
-    </div>
-</section>
+        </section>
