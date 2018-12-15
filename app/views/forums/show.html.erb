@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <ol class="breadcrumb">
-                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Accueil", root_path %></li>
                 <li><%= link_to "Categories", categories_path %></li>
                 <li><%= link_to @category.title, category_path(@category) %></li>
                 <li class="active"><%= @forum.title %></li>
@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <h1><%= @forum.title %></h1>
-                <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Back"), category_path(@category), class: "btn btn-secondary" %>
+                <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Retour"), category_path(@category), class: "btn btn-secondary" %>
                 <% if user_signed_in? %>
                 <% if current_user.admin? %>
                 <%= link_to "Editer le Forum", edit_category_forum_path(@category, @forum), class:"btn btn-warning btn-sm" %>
