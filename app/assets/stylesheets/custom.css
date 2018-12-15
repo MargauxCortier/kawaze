@@ -456,6 +456,10 @@ ul.socialicons li a:hover {
 
 
 /*--- Sidebar ---*/
+#follow{
+    position:fixed;
+    top:20px;
+}
 
 .sidebarblock {
     background-color: #ffffff;

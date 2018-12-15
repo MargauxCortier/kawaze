@@ -27,8 +27,8 @@
     <br>
     <div class="container">
         <div class="row justify-content-center">
+            <% @category.forums.each do |forum| %>
             <div class="col-lg-6">
-                <% @category.forums.each do |forum| %>
                 <div class="post">
                     <div style="padding: 10px 94px 10px 94px ">
                         <h2><%= link_to forum.title, category_forum_path(@category, forum) %></h2>
@@ -47,8 +47,8 @@
                     <% end %>
                     <% end %>
                 </div>
-                <% end %>
             </div>
+            <% end %>
         </div>
     </div>
 </section>
