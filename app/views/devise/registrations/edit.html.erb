@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 breadcrumbf">
-        <a href="#">Edit <%= resource_name.to_s.humanize %></a> 
+        <a href="#">Modifier <%= resource_name.to_s.humanize %></a> 
       </div>
     </div>
   </div>
@@ -81,8 +81,8 @@
             <div class="postinfobot">
 
               <div class="pull-right postreply">
-                <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
-                <div class="pull-left"><%= f.submit "Update", :id=>"reg-submit", :class=>"btn btn-primary" %></div>
+                <div class="pull-left">
+                  <%= f.submit "Mise à jour", :id=>"reg-submit", :class=>"btn btn-primary" %></div>
               </div>
               
               <div class="clearfix"></div>
@@ -95,53 +95,56 @@
       </div>
     </div>
 
-
+  <!-- UNHAPPY  -->
     <div class="container">
       <div class="row">
         <div class="col-lg-8 breadcrumbf">
-          <a href="#">Unhappy ?</a> 
+          <a href="#">Insatisfé ?</a> 
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-8">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-8">
 
-          <!-- POST -->
-          <div class="post">
-            <div class="form newtopic">
-              <div class="postinfotop">
-                <h2>Cancel my account</h2>
-              </div>
-
-              <!-- acc section -->
-              <div class="accsection">
-
-                <div class="posttext pull-left">
-                  <div class="row">
-
-                    <div class="col-lg-4 col-md-4 col-xs-4">
-                      <p>Unhappy?</p>
-                    </div>
-
-                    <div class="col-lg-5 col-md-5 col-xs-5">
-                      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-default" %>
-                    </div>
-
-                    <div class="col-lg-3 col-md-3 col-xs-3">
-                      <%= link_to "Back", :back %>
-                    </div>
+              <!-- POST -->
+              <div class="post">
+                <div class="form newtopic">
+                  <div class="postinfotop">
+                    <h2>Suprimer mon compte</h2>
                   </div>
+
+                      <!-- acc section -->
+                  <div class="accsection">
+                    <div class="postinfotop">
+                      <div class="posttext pull-left">
+                        <div class="row">
+
+                        <div class="col-lg-5 col-md-5 col-xs-5">
+                          <%= link_to "Retour", :back %>
+                        </div>
+                      
+
+                        <div class="col-lg-7 col-md-7 col-xs-7">
+                          <div class="pull-right postreply">
+                            <div class="pull-left">
+                              <%= button_to "Suprimer mon compte", registration_path(resource_name), data: { confirm: "Etes vous sûr ?" }, method: :delete, class: "btn btn-danger" %>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
               </div>  
             </div><!-- acc section END -->
           </div>
         </div>
       </div>
     </div>
-
+  <!-- / UNHAPPY  -->
 
   </div>
 </div>
