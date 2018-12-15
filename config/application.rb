@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module Kawaze
 	class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -25,4 +27,6 @@ module Kawaze
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+
+ 
 end
