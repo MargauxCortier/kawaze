@@ -21,10 +21,16 @@
 <!-- COLONE CATEGORIES -->
 	<div class="row">
 		<% @categories.each do |category| %>
-				<div class="col-lg-6">
+				<div class="col-lg-6 col-md-6">
 					<div class="categories_views">
 						<div class="post">
-							<div style="padding: 10px 94px 10px 94px ">
+							<div class="topwrap">
+								<div class="userinfo pull-left" style="padding-top: 35px !important">
+									<div class="avatar">
+                                		<a href="/categories/<%= category.id %>" style="text-decoration:none"><%= image_tag('icons-clover-1.png') %></a>
+                            		</div>
+								</div>							
+							<div class="posttext pull-left">
 								<h2><%= link_to category.title, category_path(category) %></h2>
 								<% if category.forums.size > 0 %>
 								<p>Il y a <%= category.forums.size %> forum dans cette catégorie.</p>
@@ -33,6 +39,8 @@
 								<% else %>
 								<p>Il n'y a actuellement aucun forum dans cette catégorie.</p>
 								<% end %>
+							</div>
+							<div class="clearfix"></div>
 							</div>
 							<% if user_signed_in? %>
 								<div class="postinfobot">
