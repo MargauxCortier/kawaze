@@ -1,3 +1,36 @@
 // Place all the styles related to the forums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#outer-box {
+  position: relative;
+  display: block;
+}
+/* line 14, ../sass/style.scss */
+#outer-box #inner-box {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 3.5em;
+  transition: opacity .5s;
+}
+/* line 25, ../sass/style.scss */
+#outer-box #inner-box p {
+  visibility: hidden;
+  color: #30336b;
+  font-size: medium;
+  text-align: center;
+}
+/* line 34, ../sass/style.scss */
+#outer-box:hover #inner-box {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#outer-box:hover #inner-box p {
+  visibility: visible;
+}
