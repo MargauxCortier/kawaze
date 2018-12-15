@@ -25,8 +25,8 @@ Le site proposerait différents forums de discussion en fonction des maladies, m
 
 Il y aura donc :
 
-- de la BDD (le plus compliqué sera le commentaire de commentaire pas de quoi s'alarmer)
-- du triage et des recherches complexes en fonction des villes et des maladies
+- de la BDD
+- des recherches en fonction des villes et des maladies
 - un système de PM entre users
 - des pages profil détaillées
 - suffisament de pages pour s'amuser en Front
