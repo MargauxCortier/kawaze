@@ -41,8 +41,12 @@
                     <div class="topwrap" id="<%= post.id%>.post">
                         <div class="userinfo pull-left">
                             <div class="avatar">
-                                <%= image_tag('avatar.jpg') %>
+                                <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
+                                <% if User.find(post.user_id).is_signed_in? %>
                                 <div class="status green">&nbsp;</div>
+                                <% else %>
+                                <div class="status red">&nbsp;</div>
+                                <% end %>
                             </div>
                         </div>
                         <div class="posttext pull-left">
@@ -86,8 +90,12 @@
                     <div class="topwrap">
                         <div class="userinfo pull-left">
                             <div class="avatar">
-                                <%= image_tag('avatar.jpg') %>
+                                <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
+                                <% if User.find(post.user_id).is_signed_in? %>
+                                <div class="status green">&nbsp;</div>
+                                <% else %>
                                 <div class="status red">&nbsp;</div>
+                                <% end %>
                             </div>
                         </div>
                         <div class="posttext pull-left">
@@ -111,7 +119,7 @@
                     <% end %>
 
                     <% else %>
-
+                    <div id="outer-box">
                     <%= form_tag(category_forum_post_comments_path(@category, @forum, post), :method => :post, class: 'form newtopic') do  %>
                     <div class="topwrap">
                         <div class="userinfo pull-left">
@@ -135,6 +143,15 @@
                         <div class="clearfix"></div>
                     </div>
                     <% end %>
+                    <div id="inner-box">
+                        <div class="clearfix">
+                    <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
+                  <p>
+                    <%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
+                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %></p>
+                    </div>
+                </div>
+            </div>
                     <% end %>
 
                     <!-- /CommentForm -->
@@ -151,8 +168,12 @@
                     <div class="topwrap" id="createpost">
                         <div class="userinfo pull-left">
                             <div class="avatar">
-                                <%= image_tag('avatar.jpg') %>
+                                <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
+                                <% if User.find(post.user_id).is_signed_in? %>
+                                <div class="status green">&nbsp;</div>
+                                <% else %>
                                 <div class="status red">&nbsp;</div>
+                                <% end %>
                             </div>
                         </div>
                         <div class="posttext pull-left">
@@ -181,7 +202,7 @@
                 </div>
 
                 <% else %>
-
+                <div id="outer-box">
                 <div class="post">
                     <%= form_tag(category_forum_posts_path(@category, @forum), :method => :post, class: 'form newtopic') do  %>
                     <div class="topwrap"  id="createpost">
@@ -211,6 +232,14 @@
                     </div>
                     <% end %>
                 </div>
+                <div id="inner-box">
+                    <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
+                  <p>
+                    <%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
+                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %></p>
+                </div>
+            </div>
+
                 <% end %>
                 <!-- /PostForm -->
             </div>
