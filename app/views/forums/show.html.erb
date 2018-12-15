@@ -168,8 +168,8 @@
                         <div class="topwrap" id="createpost">
                             <div class="userinfo pull-left">
                                 <div class="avatar">
-                                    <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
-                                    <% if User.find(post.user_id).is_signed_in? %>
+                                    <a href="/users/<%= current_user.id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
+                                    <% if User.find(current_user.id).is_signed_in? %>
                                     <div class="status green">&nbsp;</div>
                                     <% else %>
                                     <div class="status red">&nbsp;</div>
