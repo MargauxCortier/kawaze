@@ -2,8 +2,12 @@
 <div class="topwrap" style="border-top: solid 1px #f1f1f1">
     <div class="userinfo pull-left">
         <div class="avatar">
-            <%= image_tag('avatar.jpg') %>
+            <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
+            <% if User.find(post.user_id).is_signed_in? %>
             <div class="status green">&nbsp;</div>
+            <% else %>
+            <div class="status red">&nbsp;</div>
+            <% end %>
         </div>
     </div>
     <div class="posttext pull-left">
