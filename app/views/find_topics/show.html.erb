@@ -10,12 +10,17 @@
 
 				<% if @forums.length == 0 %>
 					<div class="post">
-						<div class="link_to_forum">
-							<p> Il n'y a pas encore de forum traitant de cette question, créez-le !  </p>
-							<a href="/categories"><button class="btn btn-primary">Choisissez une catégorie</button></a>
-						</div>
+						<div class="topwrap">
+							<div class="posttext pull-left">
+								<div class="link_to_forum">
+									<p> Il n'y a pas encore de forum traitant de ce sujet, créez-le ! &nbsp;&nbsp;&nbsp;  
+									<a href="/categories"><button class="btn btn-primary">Choisissez une catégorie</button></a></p>
+								</div>
+							</div>
+							<div class="clearfix"></div>
 					</div>
-
+				</div>
+				
 
 				<% else %>
 					<div class="post">
