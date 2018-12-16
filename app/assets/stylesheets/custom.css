@@ -173,6 +173,12 @@ pt-1{
 
 /*-----------------------------------------------------------------*/
 /*--- INDEX ---*/
+.link_to_forum{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;    
+    color: #30336b;
+    padding: 20px;
+}
 
 .call_to_action{
     font-family: 'Roboto Mono', monospace;
