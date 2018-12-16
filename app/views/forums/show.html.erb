@@ -59,20 +59,27 @@
                     <div class="postinfobot">
 
                         <div class="likeblock pull-left">
-                            <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-                            <% if pre_like %>
-                                <%= link_to raw("<i class='fa fa-thumbs-up'></i>"), category_forum_post_like_path(@category, @forum, post, pre_like), method: :delete, class: 'up' %>
+                            <% if user_signed_in? %>
+                                <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+                                <% if pre_like %>
+                                    <%= link_to raw("<i class='fa fa-thumbs-up'></i>"), category_forum_post_like_path(@category, @forum, post, pre_like), method: :delete, class: 'up' %>
+                                <% else %>
+                                    <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(@category, @forum, post), method: :post, class: 'up' %>
+                                <% end %>
+                                <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
+                                <% pre_disslike = post.disslikes.find { |disslike| disslike.user_id == current_user.id} %>
+                                <% if pre_disslike %>
+                                    <%= link_to raw("<i class='fa fa-thumbs-down'></i>"), category_forum_post_disslike_path(@category, @forum, post, pre_disslike), method: :delete, class: 'down' %>
+                                <% else %>
+                                    <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(@category, @forum, post), method: :post, class: 'down' %>
+                                <% end %>
+                                <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
                             <% else %>
                                 <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(@category, @forum, post), method: :post, class: 'up' %>
-                            <% end %>
-                            <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
-                            <% pre_disslike = post.disslikes.find { |disslike| disslike.user_id == current_user.id} %>
-                            <% if pre_disslike %>
-                                <%= link_to raw("<i class='fa fa-thumbs-down'></i>"), category_forum_post_disslike_path(@category, @forum, post, pre_disslike), method: :delete, class: 'down' %>
-                            <% else %>
+                                <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
                                 <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(@category, @forum, post), method: :post, class: 'down' %>
+                                <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
                             <% end %>
-                            <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
                         </div>
 
                         <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= post.created_at.strftime("%d %b a %H:%M")%> par <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
@@ -159,7 +166,7 @@
                                 <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
                                 <p>
                                     <%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
-                                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %></p>
+                                    <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary", onClick:"history.go(0)" %></p>
                                 </div>
                             </div>
                         </div>
@@ -245,8 +252,8 @@
                         </div>
                         <div id="inner-box">
                             <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
-                            <p><%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary" %>
-                                <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary" %>
+                            <p><%= link_to "S'enregistrer", new_user_session_path, class:"btn btn-primary"%>
+                                <%= link_to "Se connecter", new_user_registration_path, class:"btn btn-primary", onClick:"history.go(0)" %>
                             </p>
                             </div>
                         </div>
