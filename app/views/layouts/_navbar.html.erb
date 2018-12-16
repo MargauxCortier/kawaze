@@ -43,7 +43,7 @@
                     <li role="presentation"><a href="/">Accueil</a></li>
                     <li role="presentation"><a href="/users/<%= current_user.id %>">Mon profil</a></li>
                     <li role="presentation"><a href="/users/edit">Modifier mon profil</a></li>
-                    <li role="presentation"><%= link_to "Déconnection", destroy_user_session_path, :method => :delete %></li>
+                    <li role="presentation"><%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %></li>
                 </ul>
             </div>
 
