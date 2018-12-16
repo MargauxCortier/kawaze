@@ -18,16 +18,15 @@
                 <div class="img_info_perso">
                 <div class="col-xs-6 col-sm-4 col-lg-4">
                     <div class="bio-image">
-                    <%= image_tag('fbkavatar.jpg') %>
+                    <%= image_tag('avatarbig.png') %>
                     </div> 
                 </div>
 
-                <div class="col-xs-6 col-sm-8 col-lg-8">
-                    <p><span><%= @user.name %></span></p>
+                <div class="col-xs-6 col-sm-8 col-lg-8" style="font-size: medium;">
+                    <p><span><%= @user.name %></span> <% if user_signed_in? %><span class="label label-success">En Ligne</span><% else %><span class="label label-danger">Hors Ligne</span><% end %></p>
                     <p>Ville:<%= @user.city %></p>
                     <% if current_user == @user %>
-                    <p>Email: <span><%= current_user.email%></span></p>
-                    <p>(visible seulement par moi)<p>
+                    <p>Email: <span><%= current_user.email%></span> (masqué)</p>
                     <% end %>
                 </div>
                 </div>
@@ -49,6 +48,7 @@
                 <a class="btn btn-primary btn-lg" href="/chat" role="button">Contacter par message</a>
             </div>
         <% end %>     
+        <div class="clearfix"></div>
 </div>
 <!-- /PROFIL -->
 
@@ -57,32 +57,18 @@
        <% if current_user == @user %>
            <div class="col-lg-4 col-md-4">
                 <div class="sidebarblock">
-                    <h3>Mes conversations en cours</h3>
+                    <h3>Mes posts</h3>
+                    <% @posts.each do |post| %>
                     <div class="divline"></div>
                     <div class="blocktxt">
-                        <a href="#">This Dock Turns Your iPhone Into a Bedside Lamp</a>
+                        <%= link_to post.title.capitalize, category_forum_path(Forum.find(post.forum_id).category_id, post.forum_id) %> <span class="badge pull-right"><%= post.comments.count %></span>
                     </div>
-                    <div class="divline"></div>
-                    <div class="blocktxt">
-                        <a href="#">Who Wins in the Battle for Power on the Internet?</a>
-                    </div>
-                    <div class="divline"></div>
-                    <div class="blocktxt">
-                        <a href="#">Sony QX10: A Funky, Overpriced Lens Camera for Your Smartphone</a>
-                    </div>
-                    <div class="divline"></div>
-                    <div class="blocktxt">
-                        <a href="#">FedEx Simplifies Shipping for Small Businesses</a>
-                    </div>
-                    <div class="divline"></div>
-                    <div class="blocktxt">
-                        <a href="#">Loud and Brave: Saudi Women Set to Protest Driving Ban</a>
-                    </div>
+                    <% end %>
                 </div>
             </div> 
         <% end %> 
         <!-- CONVERSATION -->
-
+        <div class="clearfix"></div>
     </div>
   </div>
 </div>
