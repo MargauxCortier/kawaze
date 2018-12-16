@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/users/:id', to: 'profile#show'
   get '/chat', to: 'rooms#show'
-  mount ActionCable.server => '/cable'
+  # mount ActionCable.server => '/cable'
   
   get '/find', to: 'find_users#show'
   post '/find', to: 'find_users#find'
