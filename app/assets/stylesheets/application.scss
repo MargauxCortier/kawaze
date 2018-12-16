@@ -20,12 +20,13 @@
  */
 
 .affix {
-      top: 0;width: 100%;
-      z-index: 9999 !important; 
-      background-color: white;
-      box-shadow: 0px 2px 2px #e2e5e5
-  }
+  top: 0;
+  width: 100%;
+  z-index: 9999 !important; 
+  background-color: white;
+  box-shadow: 0px 2px 2px #e2e5e5
+}
 
-  .affix + #container-fluid {
-      padding-top: 70px;
-  }
+.affix + #container-fluid {
+  padding-top: 70px;
+}
