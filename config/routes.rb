@@ -3,20 +3,19 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations', 
                                     sessions: 'sessions' 
                                   }
-  get 'find_topics/show'
 
   root 'home#index'
   get '/users/:id', to: 'profile#show'
+
+  # Chat Routes
   get '/chat', to: 'rooms#show'
   mount ActionCable.server => '/cable'
-  
+
+  # Search routes
   get '/find', to: 'find_users#show'
   post '/find', to: 'find_users#find'
-  get '/findtopics', to: 'find_topics#show'
- 
-  get '/new_account', to: 'home#new_account_04'
 
-# Forum routes
+  # Forum routes
   resources :categories do
     resources :forums do
   		resources :posts do
