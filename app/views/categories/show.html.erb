@@ -9,58 +9,58 @@
             </ol>
         </div>
 
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2><%= @category.title %></h2>
-                    <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Retour"), categories_path, class: "btn btn-secondary" %>
-                    <% if user_signed_in? %>
-                    <% if current_user.admin? %>
-                    <%= link_to "Editer la Categorie", edit_category_path(@category), class: "btn-warning btn-sm" %>
-                    <%= link_to "Supprimer la Categorie", category_path(@category), method: :delete, data: { confirm: "Etes-vous sûr?" }, :method => :delete, class: "btn-danger btn-sm" %>
-                    <% end %>
-                    <%= link_to "Créer un nouveau Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
-                    <% end %>
-                    <button class="btn-warning btn-sm" data-toggle="modal" data-target="#howto">Comment ça marche ?</button>
-                </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <h2><%= @category.title %></h2>
+                <%= link_to raw("<i class='fa fa-arrow-left'></i>"+" Retour"), categories_path, class: "btn btn-secondary" %>
+                <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                <%= link_to "Editer la Categorie", edit_category_path(@category), class: "btn-warning btn-sm" %>
+                <%= link_to "Supprimer la Categorie", category_path(@category), method: :delete, data: { confirm: "Etes-vous sûr?" }, :method => :delete, class: "btn-danger btn-sm" %>
+                <% end %>
+                <%= link_to "Créer un nouveau Forum", new_category_forum_path(@category), class: "btn-success btn-sm" %>
+                <% end %>
+                <button class="btn-warning btn-sm" data-toggle="modal" data-target="#howto">Comment ça marche ?</button>
             </div>
+        </div>
     </br>
-<!-- COLONE FORUM -->
+    <!-- COLONE FORUM -->
     <div class="row">
         <% @category.forums.each do |forum| %>
-                <div class="col-lg-6 col-md-6">
-                    <div class="categories_views">
-                        <div class="post">
-                            <div class="topwrap">
-                                <div class="userinfo pull-left" style="padding-top: 35px !important">
-                                    <div class="avatar">
-                                        <a href="/categories/<%= @category.id %>/forums/<%= forum.id %>" style="text-decoration:none"><%= image_tag('icons-general-1.png') %></a>
-                                    </div>
-                                </div>                          
-                            <div class="posttext pull-left">
-                                <h2><%= link_to forum.title.capitalize, category_forum_path(@category, forum) %></h2>
-                                <% if forum.posts.size > 0 %>
-                                <p>Dernier post le : <%= forum.posts.last.created_at.strftime("%d %b %Y a %H:%M") %></p>
-                                <% else %>
-                                <p>Il n'y a actuellement pas de posts.</p>
-                                <% end %>
+        <div class="col-lg-6 col-md-6">
+            <div class="categories_views">
+                <div class="post">
+                    <div class="topwrap">
+                        <div class="userinfo pull-left" style="padding-top: 35px !important">
+                            <div class="avatar">
+                                <a href="/categories/<%= @category.id %>/forums/<%= forum.id %>" style="text-decoration:none"><%= image_tag('icons-general-1.png') %></a>
                             </div>
-                            <div class="clearfix"></div>
-                            </div>
-                            <% if user_signed_in? %>
-                                <div class="postinfobot">
-                                    <% if current_user.admin? %>
-                                    <%= link_to "Editer le Forum", edit_category_forum_path(@category, forum), class:"btn-warning btn-sm" %>
-                                    <%= link_to "Supprimer le Forum", category_forum_path(@category, forum), method: :delete, data: { confirm: "Etes-vous sûr?" }, class:"btn-danger btn-sm" %>
-                                    <% end %>
-                                </div>  
+                        </div>                          
+                        <div class="posttext pull-left">
+                            <h2><%= link_to forum.title.capitalize, category_forum_path(@category, forum) %></h2>
+                            <% if forum.posts.size > 0 %>
+                            <p>Dernier post le : <%= forum.posts.last.created_at.strftime("%d %b %Y a %H:%M") %></p>
+                            <% else %>
+                            <p>Il n'y a actuellement pas de posts.</p>
                             <% end %>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
+                    <% if user_signed_in? %>
+                    <div class="postinfobot">
+                        <% if current_user.admin? %>
+                        <%= link_to "Editer le Forum", edit_category_forum_path(@category, forum), class:"btn-warning btn-sm" %>
+                        <%= link_to "Supprimer le Forum", category_forum_path(@category, forum), method: :delete, data: { confirm: "Etes-vous sûr?" }, class:"btn-danger btn-sm" %>
+                        <% end %>
+                    </div>  
+                    <% end %>
                 </div>
-            <% end %>
+            </div>
         </div>
-    <!-- / COLONE FORUM -->    
+        <% end %>
     </div>
+    <!-- / COLONE FORUM -->    
+</div>
 </section>
 
 
@@ -70,14 +70,22 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Comment ça marche ?</h4>
+                <h4 class="modal-title" id="myModalLabel"> Comment poster sur Kawaze ?</h4>
             </div>
             <div class="modal-body">
-                <p>Ici on va expliquer ce que représente un forum de discussion pour nous.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <p>Afin de faciliter la navigation au sein du forum, veuillez suivre la procédure suivante :
+                    <ul>
+                        <li> Un forum doit porter le nom de la maladie à propos de laquelle vous souhaitez échanger.
+                        Dans ce forum les utilisateurs connectés pourront écrire des posts relatifs à cette maladie, et commenter les posts déjà existants.
+                        Si une maladie n’est pas répertoriée, lancez-vous, créez un forum Kawaze !</li>
+
+                        <li>Vérifiez que vous êtes dans la bonne catégorie ou le bon forum, et écrivez un post qui permettra aux utilisateurs d’échanger sur un sujet qui vous intéresse.
+                        Votre post peut être un partage d’expérience, une question, une information… une invitation à échanger !</li>
+                    </ul></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
