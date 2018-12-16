@@ -70,18 +70,45 @@ pt-1{
 .chat_content{
     font-family: 'Roboto Mono', monospace;
     font-family: 'Quicksand', sans-serif; 
-    padding-left: 0%;
+    text-align: left;
     color: #30336b;
-    padding: 2px;    
+}
+
+.created_at_u2{
+    font-family: 'Quicksand', sans-serif; 
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    color: #333;
+    text-align: left;
+}
+.chat_content_user{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif; 
+    color: #436b30;
+    text-align: right;
+}
+
+.created_at_u{
+    font-family: 'Quicksand', sans-serif; 
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px;
+    color: #333;
+    text-align: right;
+}
+
+.says{
+    padding-right: 2%;
+    float: right;
 }
 
 .say_something {
     padding: 10px;
 }
 
-.message{
+#chat_down{
+    position: static;
+    bottom: 0;
 }
-
 /*-----------------------------------------------------------------*/
 /*--- CATEGORIES VIEW ---*/
 
