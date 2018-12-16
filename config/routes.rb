@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   # Search routes
   get '/find', to: 'find_users#show'
   post '/find', to: 'find_users#find'
-  get '/findtopics', to: 'find_topics#show'
 
   # Forum routes
   resources :categories do
