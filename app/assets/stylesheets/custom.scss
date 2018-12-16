@@ -32,6 +32,7 @@
 -------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono');
+@import "variables";
 
 /*-----------------------------------------------------------------*/
 /*--- General ---*/
@@ -454,6 +455,32 @@ ul.socialicons li a:hover {
     background-color: #ecd346;
 }
 
+
+#deco-logo{
+    color: black;
+}
+
+#deco-text{
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
+    opacity: 0;
+    
+}
+
+#deco-logo:hover #deco-text {
+    animation: fadein 1.5s;
+    -webkit-animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+    
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 /*-----------------------------------------------------------------*/
 /*--- Content ---*/
 
