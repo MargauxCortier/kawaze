@@ -1,0 +1,21 @@
+// $(document).ready(function() {
+// function renderPage() {
+//     $(".chat_down").html("<%= j render '@messages'");
+// };
+// renderPage();
+// });
+
+$(window).scroll(function() {
+  sessionStorage.scrollTop = $(this).scrollTop();
+});
+
+$(document).ready(function() {
+  if (sessionStorage.scrollTop != "undefined") {
+    $(window).scrollTop(sessionStorage.scrollTop);
+  }
+});
+
+
+function myFunction(){
+	$("chat_down").submit();
+}

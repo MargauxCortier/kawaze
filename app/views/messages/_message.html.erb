@@ -1,43 +1,42 @@
 
 
-			<% if message.user_id == current_user.id %>
-
-				<div class="row">
-					<div class="col-lg-12">	
-						<strong class="says" style="padding:2%"><%= message.user_id %> says :</strong><br />
-					</div>
-					<div class="col-lg-12">
-						<div class="chat_content_user" style="padding-right:2%">
-							<%= message.body %>
-						</div>
-					</div>
-
-					<div class="col-lg-12">
-						<div class="created_at_u" style="padding-right:2%">
-							<small>at <%= l message.created_at, format: :short %></small>
-						</div><hr>
-						<div class="clearfix"></div>
+	<% if message.user_id == current_user.id %>
+		<div class="row square" id="post_chat">
+			
+				<div class="col-lg-12">	
+					<strong class="says">moi</strong><br />
+				</div>
+				<div class="col-lg-12">
+					<div class="chat_content_user" style="padding-right:2%">
+						<%= message.body %>
 					</div>
 				</div>
 
-			<% else %>
-
-				<div class="row">
-					<div class="col-lg-12">	
-						<strong style="padding:2%"><%= message.user_id %> says :</strong><br />
+				<div class="col-lg-12">
+					<div class="created_at_u" style="padding-right:2%">
+						<small>at <%= l message.created_at, format: :short %></small>
 					</div>
-					<div class="col-lg-12">
-						<div class="chat_content" style="padding-left:2%">
-							<%= message.body %>
-						</div>
-					</div>
-
-					<div class="col-lg-12">
-						<div class="created_at_u2" style="padding-left:2%">
-							<small>at <%= l message.created_at, format: :short %></small>
-						</div><hr>
-						<div class="clearfix"></div>
-					</div>
+					<div class="clearfix"></div>
 				</div>
+		</div>
 
-			<% end %>
+	<% else %>
+		
+		<div class="row square" id="post_chat_other">
+			<div class="col-lg-12">	
+				<strong style="padding:2%"><%= message.user.name %> says :</strong><br />
+			</div>
+			<div class="col-lg-12">
+				<div class="chat_content" style="padding-left:2%">
+					<%= message.body %>
+				</div>
+			</div>
+
+			<div class="col-lg-12">
+				<div class="created_at_u2" style="padding-left:2%">
+					<small>at <%= l message.created_at, format: :short %></small>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	<% end %>
