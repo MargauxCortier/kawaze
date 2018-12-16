@@ -668,13 +668,23 @@ td.chbox {
     padding: 20px 0 15px 15px;
 }
 
+.submit_new_category{
+    width: 85%;
+    padding-right: 30px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    color: #989c9e;
+    font-size: 14px;
+    font-family: 'Open Sans Light', sans-serif;   
+    line-height: 25px;
+}
+
 .post .posttext {
     width: 85%;
     padding-right: 30px;
     padding-left: 15px;
     padding-top: 20px;
     padding-bottom: 15px;
-
     color: #989c9e;
     font-size: 14px;
     font-family: 'Open Sans Light', sans-serif;   
@@ -684,8 +694,6 @@ td.chbox {
 .post .postinfo {
     width: 15%;
     border-left: solid 1px #f1f1f1;
-
-
 }
 
 .post .avatar {

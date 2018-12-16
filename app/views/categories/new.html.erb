@@ -1,35 +1,43 @@
 <% content_for :page_title, "Créer une nouvelle Catégorie" %>
 <section class="content" id="container-fluid">
+	
 	<div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <h1>Nouvelle Catégorie</h1>
-      </div>
-    </div>
-  </div>
+	    <div class="row">
+		    <div class="col-lg-8">
+		    	<h1>Nouvelle Catégorie</h1>
+		    </div>
+	    </div>
+	</div>
+
 	<div class="container">
-		<div class="row">
-			<div class="col">
-				<div class="post">
-					<%= form_tag(@category, :method => :post, class: 'form newtopic') do  %>
-					<div class="topwrap">
-						<div class="posttext pull-left">
-							<div style="padding-left: 94px ">
-								<%= text_field_tag :title, nil, placeholder: 'Titre de la Catégorie', class: 'form-control' %>
+		<div class="post">
+			<%= form_tag(@category, :method => :post, class: 'form newtopic') do  %>
+				
+				<div class="row">
+					<div class="col-lg-12">
+						
+						<div class="topwrap">
+							<div class="posttext pull-left">
+								<div style="padding-left: 94px ">
+									<%= text_field_tag :title, nil, placeholder: 'Titre de la Catégorie', class: 'form-control' %>
+								</div>
 							</div>
 						</div>
-					                             
-						<div class="pull-right">
-							<div class="pull-right"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
-
-							<div class="clearfix"></div>
-						</div>
-						<div class="clearfix"></div>
-						</div> 
-					<% end %>
+					</div>
 				</div>
-
-			</div>
+							        
+			        <div class="row">
+			        	<div class="col-lg-12">
+							<div class="submit_new_category pull-left">
+								<div style="padding-left: 94px ">
+									<%= submit_tag "Envoyer", class: "btn btn-primary" %>
+								</div>
+							</div>
+						</div>
+					<div class="clearfix"></div>
+				</div>
+				
+			<% end %>
 		</div>
 	</div>
 </section>
