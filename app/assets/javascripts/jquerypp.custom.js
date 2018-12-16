@@ -299,3 +299,17 @@ $.event.setupHelper( [
 });
 
 })(jQuery)
+
+
+ /////////////////////// AUTOMATIQUE SCROLLDOWN ON CHAT //////////////////////
+
+received: function(data) {
+    // Called when there's incoming data on the websocket for this channel
+    $('.down').append(data.message);
+    scroll_bottom();
+  },
+
+
+
+
+

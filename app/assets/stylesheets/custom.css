@@ -106,9 +106,10 @@ pt-1{
 }
 
 #chat_down{
-    position: static;
-    bottom: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
 }
+
 /*-----------------------------------------------------------------*/
 /*--- CATEGORIES VIEW ---*/
 
