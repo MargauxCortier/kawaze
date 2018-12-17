@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 breadcrumbf">
-                <h1>Create New account</h1> 
+                <h1>Créer un compte</h1> 
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                                         </div>
 
                                         <div class="col-lg-4 col-md-4">
-                                            <%= f.text_field :illness, autofocus: true, :placeholder=>"Maladie", :class=>"form-control" %>
+                                            <%= f.text_field :illness, autofocus: true, :placeholder=>"De quelle maladie voulez-vous parler ?", :class=>"form-control" %>
                                         </div>
 
                                         <div class="col-lg-4 col-md-4">
@@ -42,7 +42,7 @@
                                     </div>
 
                                     <div>
-                                        <%= f.text_field :description, autofocus: true, :placeholder=>"Description", :class=>"form-control" %>
+                                        <%= f.text_field :description, autofocus: true, :placeholder=>"Votre description, ce qui vous caractérise, en trois mots ou plusieurs paragraphes...", :class=>"form-control" %>
                                     </div>
 
                                     <div>
@@ -71,7 +71,7 @@
                         <div class="postinfobot">
 
                             <div class="pull-left postreply">
-                                <div class="pull-left"><%= f.submit "S'enregistrer", :id=>"reg-submit", :class=>"btn btn-success" %></div>
+                                <div class="pull-left"><%= f.submit "Créer un compte", :id=>"reg-submit", :class=>"btn btn-success" %></div>
                             </div>
                             <div class="pull-right postreply">
                                 <%= render "devise/shared/links" %>

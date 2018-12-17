@@ -21,7 +21,7 @@
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-xs-12 ">
 							<div class="pres">
-								<strong style="font-size:20px">Trouvez des membres par : </strong>
+								<strong style="font-size:20px">Trouvez des membres selon : </strong>
 							</div>
 						</div>
 					</div>
@@ -31,9 +31,9 @@
 							<%= search_form_for(@q, url: "/find", method: :get, class: 'form newtopic') do |f| %>
 									<div class="col-lg-9 col-md-9 col-xs-12">
 										<div class="input-group">
-									<%= f.search_field :illness_cont, :placeholder=>"mot-clef maladie", class: 'form-control' %>
+									<%= f.search_field :illness_cont, :placeholder=>"maladie renseignée", class: 'form-control' %>
 									<span class="input-group-addon">et/ou</span>
-									<%= f.search_field :city_cont, :placeholder=>"ville", class: 'form-control' %>
+									<%= f.search_field :city_cont, :placeholder=>"ville renseignée", class: 'form-control' %>
 									</div>
 									</div>
 									<div class="col-lg-3 col-md-3 col-xs-12">
