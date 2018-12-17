@@ -109,11 +109,14 @@
                         <div class="userinfo pull-left">
                             <div class="avatar">
                                 <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
-                                <% if User.find(post.user_id).is_signed_in? %>
+                                <% if User.find(current_user.id).is_signed_in? %>
                                 <div class="status green">&nbsp;</div>
                                 <% else %>
                                 <div class="status red">&nbsp;</div>
                                 <% end %>
+                            </div>
+                            <div class="icons">
+                                <p style="text-align: center;font-size: small;"><%= User.find(current_user.id).name %></p>
                             </div>
                         </div>
                         <div class="posttext pull-left">
@@ -193,6 +196,9 @@
                                     <div class="status red">&nbsp;</div>
                                     <% end %>
                                 </div>
+                                <div class="icons">
+                                <p style="text-align: center;font-size: small;"><%= User.find(current_user.id).name %></p>
+                            </div>
                             </div>
                             <div class="posttext pull-left">
                                 <h2>Nouveau Post</h2>
