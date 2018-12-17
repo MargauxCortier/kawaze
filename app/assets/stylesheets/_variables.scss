@@ -1,37 +1,89 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+/******* COLOR ********/
 
 $cedarchest:#D25A4A;
+$cedarchesthover:#a53d30;
+
+/*WHITE*/
 $smoke:#F4F7F5;
+
+/*KAWAZE TITLE*/
+$spacecadet:#1D3461;
+$win:#631d0e;
+
+$comment:#141B3E;
+
 $blue:#4D8CA6;
+$bluehover:#2c5161;
+
+$greygreen:#9db991;
+$greygreen_hover:#7e9674;
+
 $grey:#AAC9D6;
 $melon:#F4BAA8;
-$saffron:#F5B22D;
-$cedarchesthover:#a53d30;
-$vividburgundy:#A71D31;
-$kawazefont:'Roboto Mono', sans-serif;
-$kawazefont1: 'Quicksand' ,sans-serif;
 
+$saffron:#F5B22D;
+$saffron_hover:#d89309;
+
+$vividburgundy:#A71D31;
+$vividburgundy_hover:#6f1421;
+
+$moonstone:#30aebf;
+$moonstone_hover:#047d8e;
+
+/******** FONT ********/
+$kawazefont:'Roboto Mono', sans-serif;
+$kawazefont1: 'Quicksand', sans-serif;
+
+/* FONT KAWAZE TITLE */
+$kawazefont2: 'Questrial', roboto mono, sans-serif;
+
+/******** BUTTON BOOTSTRAP********/
  .btn {
  	font-family: "helvetica";
  	color: $smoke;
     &-primary{
-	background-color: #blue;
+	background-color: $cedarchest;
+    border-color: $cedarchest;
 		&:hover{
-		background-color: pink;
+		background-color: $cedarchesthover;
+        border-color: $cedarchest;
+        }
+        &:focus{
+        background-color: $cedarchesthover;
+        border-color: $cedarchest;
+        }
+        &:active{
+        background-color: $cedarchesthover;
+        border-color: $cedarchesthover;
+        }
     }
     &-warning{
     background-color: $saffron;
+    border-color: $saffron;
+        &:hover{
+        background-color: $saffron_hover;
+        border-color: $saffron_hover;
+        }
     }
     &-danger{
 	background-color: $vividburgundy;
+    border-color: $vividburgundy;
+        &:hover{
+        background-color: $vividburgundy_hover;
+        border-color: $vividburgundy_hover;
+        }
     }
     &-success{
-    background-color: $blue;	
+    background-color: $moonstone;	
+    border-color: $moonstone;
+        &:hover{
+        background-color: $moonstone_hover;
+        border-color: $moonstone_hover;
+        }
     }
 }
-
-/*a:hover{
-	text-decoration: none;
-}*/
