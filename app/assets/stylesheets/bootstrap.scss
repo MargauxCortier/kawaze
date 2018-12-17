@@ -291,12 +291,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #428bca;
+  color: $cedarchest;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: $cedarchesthover;
   text-decoration: underline;
 }
 a:focus {
@@ -469,6 +469,7 @@ h6,
   font-size: 12px;
 }
 p {
+  font-family: $kawazefont1;
   margin: 0 0 10px;
 }
 .lead {
@@ -4116,7 +4117,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #f5f5f5;
+  background-color: #f5ccbf;
   border-radius: 4px;
 }
 .breadcrumb > li {

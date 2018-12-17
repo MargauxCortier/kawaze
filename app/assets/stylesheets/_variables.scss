@@ -1,0 +1,37 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono');
+
+$cedarchest:#D25A4A;
+$smoke:#F4F7F5;
+$blue:#4D8CA6;
+$grey:#AAC9D6;
+$melon:#F4BAA8;
+$saffron:#F5B22D;
+$cedarchesthover:#a53d30;
+$vividburgundy:#A71D31;
+$kawazefont:'Roboto Mono', sans-serif;
+$kawazefont1: 'Quicksand' ,sans-serif;
+
+ .btn {
+ 	font-family: "helvetica";
+ 	color: $smoke;
+    &-primary{
+	background-color: #blue;
+		&:hover{
+		background-color: pink;
+    }
+    &-warning{
+    background-color: $saffron;
+    }
+    &-danger{
+	background-color: $vividburgundy;
+    }
+    &-success{
+    background-color: $blue;	
+    }
+}
+
+/*a:hover{
+	text-decoration: none;
+}*/

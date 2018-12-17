@@ -41,15 +41,16 @@
 body {
     font-family: 'Open Sans Light', sans-serif;
     font-size: 14px;
-    color: #989c9e;
+    color: $cedarchest;
 }
 
 a {
-    color: #363838;    
+    color: $cedarchest;    
 }
 
 a:hover {
-    color: #989c9e;   
+    color: #989c9e; 
+    text-decoration: none !important;  
 }
 
 p-1{
@@ -58,11 +59,6 @@ p-1{
 
 pt-1{
     padding-top:40px!important;
-}
-
-.btn-primary{
-    background-color: #30336b!important;
-    border-color: #30336b!important;
 }
 
 /*-----------------------------------------------------------------*/
@@ -320,8 +316,7 @@ ul.socialicons li a:hover {
     }
 
 .content {
-    background-color: #ecf0f1;
-    border-top: solid 1px #e0e4e5;
+    background-color: $melon;
 }
 
 .selecttopic {
@@ -391,7 +386,7 @@ ul.socialicons li a:hover {
     font-family: 'Open Sans Bold', sans-serif;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: #1abc9c;
+    background-color: #4D8CA6;
 }
 
 .avt .btn-primary:hover,
@@ -542,7 +537,7 @@ ul.socialicons li a:hover {
 }
 
 .sidebarblock {
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 2px #c9cccd;
     margin-bottom: 20px;
@@ -679,8 +674,7 @@ td.chbox {
 
 /*--- Post --*/
 .post {
-    background-color: #ffffff;
-
+    background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 2px #c9cccd;
     margin-bottom: 20px;
@@ -815,8 +809,8 @@ td.chbox {
 .tab-pane { padding: 15px 0; }
 .tab-content{padding:20px}
 
-.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
-body{ background: #EDECEC;}
+.card {background: #E2E4F0 none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+body{ background: #E2E4F0;}
 
 
 
