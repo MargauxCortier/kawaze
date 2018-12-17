@@ -18,12 +18,13 @@
  *= require_tree .
  *= require_self
  */
+@import "variables";
 
 .affix {
   top: 0;
   width: 100%;
   z-index: 9999 !important; 
-  background-color: white;
+  background-color: #fff;
   box-shadow: 0px 2px 2px #e2e5e5
 }
 
