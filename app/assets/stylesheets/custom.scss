@@ -62,6 +62,15 @@ pt-1{
 }
 
 /*-----------------------------------------------------------------*/
+/*--- KAWAZE TITLE ---*/
+
+.K_title{
+    font-family: $kawazefont2;
+    letter-spacing: 42px;
+    color: $win;
+}
+
+/*-----------------------------------------------------------------*/
 /*--- CHAT ---*/
 
 .chat_content{
@@ -386,14 +395,14 @@ ul.socialicons li a:hover {
     font-family: 'Open Sans Bold', sans-serif;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: #4D8CA6;
+    background-color: $cedarchest
 }
 
 .avt .btn-primary:hover,
 .avt .btn-primary:focus, 
 .avt .btn-primary:active, 
 .avt .btn-primary.active{
-    background-color: #1abc9c;
+    background-color: $cedarchesthover;
 
 
     border: none;
