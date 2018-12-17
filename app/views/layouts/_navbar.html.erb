@@ -12,7 +12,7 @@
             <div class="col-lg-3 col-xs-9 col-sm-5 col-md-4 avt">
                 <div class="stnt pull-left">                            
                     <form class="form">
-                        <a href="/find"><button class="btn btn-primary">Trouver des membres</button></a>
+                        <a href="/find"><button class="btn btn-default" style="outline: none">Trouver des membres</button></a>
                     </form>
                 </div>
             </div>
@@ -43,6 +43,7 @@
                     <li role="presentation"><a href="/">Accueil</a></li>
                     <li role="presentation"><a href="/users/<%= current_user.id %>">Mon profil</a></li>
                     <li role="presentation"><a href="/users/edit">Modifier mon profil</a></li>
+                    <hr>
                     <li role="presentation"><%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %></li>
                 </ul>
             </div>

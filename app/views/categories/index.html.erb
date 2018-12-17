@@ -3,59 +3,59 @@
 
 		<div class="row">
 			<ol class="breadcrumb">
-                <li><%= link_to "Accueil", root_path %></li>
-                <li class="active">Catégories</li>
-            </ol>
+				<li><%= link_to "Accueil", root_path %></li>
+				<li class="active">Catégories</li>
+			</ol>
 		</div>
 
 		<% if user_signed_in? %>
 		<% if current_user.admin? %>
-			<div class="row">
-				<div class="col-lg-8">
-					<%= link_to "Créer une Catégorie", new_category_path, class: "btn-sm btn-success" %>
-				</div>
+		<div class="row">
+			<div class="col-lg-8">
+				<%= link_to "Créer une Catégorie", new_category_path, class: "btn-sm btn-success" %>
 			</div>
+		</div>
 		<% end %>
 		<% end %>
 	</br>
-<!-- COLONE CATEGORIES -->
+	<!-- COLONE CATEGORIES -->
 	<div class="row">
 		<% @categories.each do |category| %>
-				<div class="col-lg-6 col-md-6">
-					<div class="categories_views">
-						<div class="post">
-							<div class="topwrap">
-								<div class="userinfo pull-left" style="padding-top: 35px !important">
-									<div class="avatar">
-                                		<a href="/categories/<%= category.id %>" style="text-decoration:none"><%= image_tag('icons-general-1.png') %></a>
-                            		</div>
-								</div>							
-							<div class="posttext pull-left">
-								<h2><%= link_to category.title, category_path(category) %></h2>
-								<% if category.forums.size > 0 %>
-								<p>Il y a <%= category.forums.size %> forum dans cette catégorie.</p>
-								<% elsif category.forums.size > 1 %>
-								<p>Il y a <%= category.forums.size %> forums dans cette .</p>
-								<% else %>
-								<p>Il n'y a actuellement aucun forum dans cette catégorie.</p>
-								<% end %>
+		<div class="col-lg-6 col-md-6">
+			<div class="categories_views">
+				<div class="post">
+					<div class="topwrap">
+						<div class="userinfo pull-left" style="padding-top: 35px !important">
+							<div class="avatar">
+								<a href="/categories/<%= category.id %>" style="text-decoration:none"><%= image_tag(category.image) %></a>
 							</div>
-							<div class="clearfix"></div>
-							</div>
-							<% if user_signed_in? %>
-								<div class="postinfobot">
-									<% if current_user.admin? %>
-									<%= link_to "Editer la Categorie", edit_category_path(category), class: "btn-warning btn-sm" %>
-									<%= link_to "Supprimer la Categorie", category_path(category), data: { confirm: "Etes-vous sûr?" }, :method => :delete, class: "btn-danger btn-sm" %>
-									<%= link_to "Créer un Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
-									<% end %>
-								</div>	
+						</div>							
+						<div class="posttext pull-left">
+							<h2><%= link_to category.title, category_path(category) %></h2>
+							<% if category.forums.size > 0 %>
+							<p>Il y a <%= category.forums.size %> forum dans cette catégorie.</p>
+							<% elsif category.forums.size > 1 %>
+							<p>Il y a <%= category.forums.size %> forums dans cette .</p>
+							<% else %>
+							<p>Il n'y a actuellement aucun forum dans cette catégorie.</p>
 							<% end %>
 						</div>
+						<div class="clearfix"></div>
 					</div>
+					<% if user_signed_in? %>
+					<div class="postinfobot">
+						<% if current_user.admin? %>
+						<%= link_to "Editer la Categorie", edit_category_path(category), class: "btn-warning btn-sm" %>
+						<%= link_to "Supprimer la Categorie", category_path(category), data: { confirm: "Etes-vous sûr?" }, :method => :delete, class: "btn-danger btn-sm" %>
+						<%= link_to "Créer un Forum", new_category_forum_path(category), class: "btn-success btn-sm" %>
+						<% end %>
+					</div>	
+					<% end %>
 				</div>
-			<% end %>
+			</div>
 		</div>
-	<!-- / COLONE CATEGORIES -->	
+		<% end %>
 	</div>
+	<!-- / COLONE CATEGORIES -->	
+</div>
 </section>

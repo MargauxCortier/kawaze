@@ -14,7 +14,7 @@
 							<div class="posttext pull-left">
 								<div class="link_to_forum">
 									<p> Il n'y a pas encore de forum traitant de ce sujet, créez-le ! &nbsp;&nbsp;&nbsp;  
-									<a href="/categories"><button class="btn btn-primary">Choisissez une catégorie</button></a></p>
+									<a href="/categories"><button class="btn btn-default">Choisissez une catégorie</button></a></p>
 								</div>
 							</div>
 							<div class="clearfix"></div>
@@ -27,7 +27,7 @@
 						<div class="link_to_forum">
 							<% @forums.each do |forum| %>
 							<ul>
-							<li><a href="/categories/<%=forum.category_id%>/forums/<%=forum.id%>"> Allez voir si le forum <strong><%= forum.title %></strong> vous convient ... </a></li>
+							<li><a href="/categories/<%=forum.category_id%>/forums/<%=forum.id%>"> Allez voir si le forum <strong style="color: #4D8CA6"><%= forum.title %></strong> vous convient ... </a></li>
 							</ul>
 							<% end %>
 						</div>

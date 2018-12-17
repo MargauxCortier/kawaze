@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "variables";
+
 #outer-box {
   position: relative;
   display: block;
@@ -21,7 +23,7 @@
 /* line 25, ../sass/style.scss */
 #outer-box #inner-box p {
   visibility: hidden;
-  color: #30336b;
+  color: $cedarchest;
   font-size: medium;
   text-align: center;
 }
