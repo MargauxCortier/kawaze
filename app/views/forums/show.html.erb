@@ -60,25 +60,25 @@
 
                         <div class="likeblock pull-left">
                             <% if user_signed_in? %>
-                                <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-                                <% if pre_like %>
-                                    <%= link_to raw("<i class='fa fa-thumbs-up'></i>"), category_forum_post_like_path(@category, @forum, post, pre_like), method: :delete, class: 'up' %>
-                                <% else %>
-                                    <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(@category, @forum, post), method: :post, class: 'up' %>
-                                <% end %>
-                                <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
-                                <% pre_disslike = post.disslikes.find { |disslike| disslike.user_id == current_user.id} %>
-                                <% if pre_disslike %>
-                                    <%= link_to raw("<i class='fa fa-thumbs-down'></i>"), category_forum_post_disslike_path(@category, @forum, post, pre_disslike), method: :delete, class: 'down' %>
-                                <% else %>
-                                    <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(@category, @forum, post), method: :post, class: 'down' %>
-                                <% end %>
-                                <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
+                            <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+                            <% if pre_like %>
+                            <%= link_to raw("<i class='fa fa-thumbs-up'></i>"), category_forum_post_like_path(@category, @forum, post, pre_like), method: :delete, class: 'up' %>
                             <% else %>
-                                <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(@category, @forum, post), method: :post, class: 'up' %>
-                                <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
-                                <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(@category, @forum, post), method: :post, class: 'down' %>
-                                <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
+                            <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(@category, @forum, post), method: :post, class: 'up' %>
+                            <% end %>
+                            <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
+                            <% pre_disslike = post.disslikes.find { |disslike| disslike.user_id == current_user.id} %>
+                            <% if pre_disslike %>
+                            <%= link_to raw("<i class='fa fa-thumbs-down'></i>"), category_forum_post_disslike_path(@category, @forum, post, pre_disslike), method: :delete, class: 'down' %>
+                            <% else %>
+                            <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(@category, @forum, post), method: :post, class: 'down' %>
+                            <% end %>
+                            <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
+                            <% else %>
+                            <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(@category, @forum, post), method: :post, class: 'up' %>
+                            <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
+                            <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(@category, @forum, post), method: :post, class: 'down' %>
+                            <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
                             <% end %>
                         </div>
 
@@ -129,7 +129,7 @@
                     <div class="postinfobot">
 
                         <div class="pull-right postreply">
-                            <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
+                            <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-default" %></div>
 
                             <div class="clearfix"></div>
                         </div>
@@ -155,7 +155,7 @@
                         <div class="postinfobot">
 
                             <div class="pull-right postreply">
-                                <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+                                <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-default", :disabled => true %></div>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -168,8 +168,8 @@
                             <div class="clearfix">
                                 <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
                                 <p>
-                                    <%= link_to "Se connecter", new_user_session_path, class:"btn btn-primary", onClick:"history.go(0)" %>
-                                    <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-primary" %></p>
+                                    <%= link_to "Se connecter", new_user_session_path, class:"btn btn-default", onClick:"history.go(0)" %>
+                                    <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-default" %></p>
                                 </div>
                             </div>
                         </div>
@@ -197,24 +197,24 @@
                                     <% end %>
                                 </div>
                                 <div class="icons">
-                                <p style="text-align: center;font-size: small;"><%= User.find(current_user.id).name %></p>
-                            </div>
+                                    <p style="text-align: center;font-size: small;"><%= User.find(current_user.id).name %></p>
+                                </div>
                             </div>
                             <div class="posttext pull-left">
                                 <h2>Nouveau Post</h2>
                                 <div>
-                                    <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control' %>
+                                    <%= text_field_tag :title, nil, placeholder: 'Titre de votre Post', class: 'form-control', required: true %>
                                 </div>
 
                                 <div>
-                                    <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control' %>
+                                    <%= text_area_tag :content, nil, placeholder: 'Description', id: 'desc', class: 'form-control', required: true  %>
                                 </div>
                             </div>
                         </div>                              
                         <div class="postinfobot">
 
                             <div class="pull-right postreply">
-                                <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary" %></div>
+                                <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-default" %></div>
 
                                 <div class="clearfix"></div>
                             </div>
@@ -246,7 +246,7 @@
                             <div class="postinfobot">
 
                                 <div class="pull-right postreply">
-                                    <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-primary", :disabled => true %></div>
+                                    <div class="pull-left"><%= submit_tag "Envoyer", class: "btn btn-default", :disabled => true %></div>
 
                                     <div class="clearfix"></div>
                                 </div>
@@ -258,35 +258,35 @@
                         </div>
                         <div id="inner-box">
                             <p>Veuillez-vous inscrire ou vous connecter afin d'acceder à cette section.</p>
-                            <p><%= link_to "Se connecter", new_user_session_path, class:"btn btn-primary", onClick:"history.go(0)" %>
-                                <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-primary" %>
+                            <p><%= link_to "Se connecter", new_user_session_path, class:"btn btn-default", onClick:"history.go(0)" %>
+                                <%= link_to "Créer un compte", new_user_registration_path, class:"btn btn-default" %>
                             </p>
-                            </div>
-                        </div>
-
-                        <% end %>
-                        <!-- /PostForm -->
-                    </div>
-                    <!-- SideBar -->
-
-                    <div class="col-lg-3 col-md-3">
-
-                        <!-- -->
-                        <div class="sidebarblock">
-                            <h3>Posts</h3>
-                            <div class="divline"></div>
-                            <div class="blocktxt">
-                                <ul class="nav nav-pills nav-stacked cats">
-                                    <% @posts.each do |post| %>
-                                    <li><%= post.title%> <span class="badge pull-right"><%= post.comments.count %></span></li>
-                                    <% end %>
-                                </ul>
-                            </div>
                         </div>
                     </div>
 
-                    <!-- /SideBar -->
+                    <% end %>
+                    <!-- /PostForm -->
+                </div>
+                <!-- SideBar -->
+
+                <div class="col-lg-3 col-md-3">
+
+                    <!-- -->
+                    <div class="sidebarblock">
+                        <h3>Posts</h3>
+                        <div class="divline"></div>
+                        <div class="blocktxt">
+                            <ul class="nav nav-pills nav-stacked cats">
+                                <% @posts.each do |post| %>
+                                <li><%= post.title%> <span class="badge pull-right"><%= post.comments.count %></span></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- /SideBar -->
             </div>
-        </section>
+
+        </div>
+    </section>

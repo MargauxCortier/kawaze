@@ -45,12 +45,28 @@ $kawazefont2: 'Questrial', roboto mono, sans-serif;
 /******** BUTTON BOOTSTRAP********/
  .btn {
  	font-family: "helvetica";
- 	color: $smoke;
+ 	color: $smoke!important;
     &-primary{
 	background-color: $cedarchest;
     border-color: $cedarchest;
 		&:hover{
 		background-color: $cedarchesthover;
+        border-color: $cedarchest;
+        }
+        &:focus{
+        background-color: $cedarchesthover;
+        border-color: $cedarchest;
+        }
+        &:active{
+        background-color: $cedarchesthover;
+        border-color: $cedarchesthover;
+        }
+    }
+    &-default{
+    background-color: $cedarchest;
+    border-color: $cedarchest;
+        &:hover{
+        background-color: $cedarchesthover;
         border-color: $cedarchest;
         }
         &:focus{

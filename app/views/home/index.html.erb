@@ -43,19 +43,19 @@
 
             <div class="likeblock pull-left">
               <% if user_signed_in? %>
-                <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
-                <% if pre_like %>
-                <%= link_to raw("<i class='fa fa-thumbs-up'></i>"), category_forum_post_like_path(Forum.find(post.forum_id).category_id, post.forum_id, post, pre_like), method: :delete, class: 'up' %>
-                <% else %>
-                <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(Forum.find(post.forum_id).category_id, post.forum_id, post), method: :post, class: 'up' %>
-                <% end %>
-                <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
-                <% pre_disslike = post.disslikes.find { |disslike| disslike.user_id == current_user.id} %>
-                <% if pre_disslike %>
-                <%= link_to raw("<i class='fa fa-thumbs-down'></i>"), category_forum_post_disslike_path(Forum.find(post.forum_id).category_id, post.forum_id, post, pre_disslike), method: :delete, class: 'down' %>
-                <% else %>
-                <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(Forum.find(post.forum_id).category_id, post.forum_id, post), method: :post, class: 'down' %>
-                <% end %>
+              <% pre_like = post.likes.find { |like| like.user_id == current_user.id} %>
+              <% if pre_like %>
+              <%= link_to raw("<i class='fa fa-thumbs-up'></i>"), category_forum_post_like_path(Forum.find(post.forum_id).category_id, post.forum_id, post, pre_like), method: :delete, class: 'up' %>
+              <% else %>
+              <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(Forum.find(post.forum_id).category_id, post.forum_id, post), method: :post, class: 'up' %>
+              <% end %>
+              <span class="up" style="margin-left: 1px !important"><%= post.likes.count %></span>
+              <% pre_disslike = post.disslikes.find { |disslike| disslike.user_id == current_user.id} %>
+              <% if pre_disslike %>
+              <%= link_to raw("<i class='fa fa-thumbs-down'></i>"), category_forum_post_disslike_path(Forum.find(post.forum_id).category_id, post.forum_id, post, pre_disslike), method: :delete, class: 'down' %>
+              <% else %>
+              <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(Forum.find(post.forum_id).category_id, post.forum_id, post), method: :post, class: 'down' %>
+              <% end %>
               <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
               <% else %>
               <%= link_to raw("<i class='fa fa-thumbs-o-up'></i>"), category_forum_post_likes_path(Forum.find(post.forum_id).category_id, post.forum_id, post), method: :post, class: 'up' %>
@@ -63,7 +63,7 @@
               <%= link_to raw("<i class='fa fa-thumbs-o-down'></i>"), category_forum_post_disslikes_path(Forum.find(post.forum_id).category_id, post.forum_id, post), method: :post, class: 'down' %>
               <span class="down" style="margin-left: 1px !important"><%= post.disslikes.count %></span>
               <% end %>
-              
+
             </div>
 
             <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posté le : <%= post.created_at.strftime("%d %b a %H:%M") %> par <%= link_to User.find(post.user_id).name, "/users/"+post.user_id.to_s %></div>
