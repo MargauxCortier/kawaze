@@ -3,7 +3,7 @@
     <div class="userinfo pull-left">
         <div class="avatar">
             <a href="/users/<%= post.user_id %>" style="text-decoration:none"><%= image_tag('avatar.png') %></a>
-            <% if User.find(post.user_id).is_signed_in? %>
+            <% if User.find(comment.user_id).is_signed_in? %>
             <div class="status green">&nbsp;</div>
             <% else %>
             <div class="status red">&nbsp;</div>

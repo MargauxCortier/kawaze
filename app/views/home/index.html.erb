@@ -82,37 +82,12 @@
         <div class="sidebarblock">
           <h3><%= link_to 'CATEGORIES', categories_path %></h3>
           <div class="divline"></div>
+          <% @categories.each do |category| %>
           <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-heart-1.png') %>  Maladies cardio-vasculaires</a>
+            <a href="/categories/<%= category.id %>"><%= image_tag(category.image) %>  <%= category.title%></a>
           </div>
           <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-brain-1.png') %>  Maladies mentales</a>
-          </div>
-          <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-virus-1.png') %>   Maladies infectieuses</a>
-          </div>
-          <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-kidney-1.png') %>  Maladies respiratoires</a>
-          </div>
-          <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-lungs-1.png') %>  Liste de cancers</a>
-          </div>
-          <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-skin-1.png') %>  Maladies dermatologiques</a>
-          </div>
-          <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-eye-1.png') %>  Maladies oculaires</a>
-          </div>
-          <div class="divline"></div>
-          <div class="blocktxt">
-            <a href="/"><%= image_tag('icons-clover-1.png') %>  Maladies rares</a>
-          </div>
+          <% end %>
         </div>
       </div>
       <!--/ CATEGORIES -->
