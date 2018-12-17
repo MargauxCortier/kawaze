@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/users/:id', to: 'profile#show'
 
+  get '/findtopics', to: 'find_topics#show'
+
   # Chat Routes
   get '/chat', to: 'rooms#show'
   mount ActionCable.server => '/cable'
